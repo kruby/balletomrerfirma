@@ -1,0 +1,51 @@
+<%= render :partial => "layouts/menu" %>
+
+<div id="admin_liste">
+<h1>Relationer i Danish Sales <%= link_to '[Ny relation]', new_relation_path %></h1>
+
+<% form_for @search do |f| %>
+<p id="search_form">
+	Firma <%= f.text_field :company_like, :size => 15, :class => 'search_field' %>
+	Kategori <%= f.text_field :category_like, :size => 10, :class => 'search_field' %>
+	By <%= f.text_field :city_like, :size => 10, :class => 'search_field' %>
+	Ansvarlig <%= f.text_field :responsible_like, :size => 5, :class => 'search_field' %>
+	<%= f.submit "[Søg]", :name => nil, :class => 'button'  %>
+	<%= link_to '[Find alle]', relations_path %>
+	<%#= link_to '[<< Aftaler]', :action => 'recent_actions', :today => nice_date_db(3.weeks.ago) %>
+	<%= link_to '[Aftaler]', relations_next_action_path %>
+</p>
+
+<% end %>
+
+<table id='zebra_stripes'>
+  <tr>
+    <th class="sort_after_text"><%= order @search, :by => :company, :as => 'Firma' %></th>
+	<th class="sort_after_text">Kontakt person</th>
+    <th class="sort_after_text"><%= order @search, :by => :city, :as => 'By' %></th>
+    <th class="sort_after_text"><%= order @search, :by => :category, :as => 'Kategori' %></th>
+    <th class="sort_after_text"><%= order @search, :by => :responsible, :as => 'Ansvarlig' %></th>
+	<th class="sort_after_text"><%= order @search, :by => :next_action, :as => 'Næste kontakt' %></th>
+	<!-- <th>Næste kontakt</th> -->
+	<th>Handling</th>
+	
+  </tr>
+
+<% for relation in @relations %>
+  <tr>
+    <td><%=h relation.company %></td>
+    <td><%=h relation.contact %></td>
+	<td><%=h relation.city %></td>
+    <td><%=h relation.category %></td>
+    <td><%=h relation.responsible %></td>
+	<td><%=h nice_timestamp(relation.next_action)rescue nil %></td>
+	<td width=auto><%= link_to '[Ret]', edit_relation_path(relation) %><%= link_to '[Slet]', relation, :confirm => 'Er du sikker?', :method => :delete %><%= link_to '[E-info]', :action => 'email_relation_info', :id => relation.id %></td>
+  </tr>
+<% end %>
+</table>
+
+<div class='pagination_info'><%#= page_entries_info @relations %></div>
+<%= will_paginate @relations %>
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

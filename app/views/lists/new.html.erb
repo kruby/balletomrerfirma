@@ -1,0 +1,36 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+<h1>
+	New list
+	<%= link_to '[Tilbage]', lists_path %>
+	<%= f.submit '[Opret]', :class => 'button' %>
+</h1>
+
+<% form_for(@list) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :aktiv %><br />
+    <%= f.check_box :active %>
+  </p>
+  <p>
+    <%= f.label :navn %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :beskrivelse %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :tilhører %><br />
+    <%= f.text_field :model_name %>
+  </p>
+  <p>
+    
+  </p>
+<% end %>
+
+
+
+</div>

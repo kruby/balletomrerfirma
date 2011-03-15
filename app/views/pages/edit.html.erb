@@ -1,0 +1,34 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+
+<%= error_messages_for :page %>
+
+<% form_for(@page) do |f| %>
+<h1>Redigering af indholdssider
+	<%= f.submit "[Opdater]", :class => 'button'%>
+	<%#= link_to '[Vis]', @page %>
+	<%= link_to '[Tilbage]', pages_path %>
+</h1>
+
+<p>
+    <b>Aktiv</b>
+	<%= f.check_box :active %>
+	<br />  
+  </p>
+<p>
+    <b>Navn</b><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <b>Titel</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <b>Indhold</b><br />
+    <%= f.text_area :body, :size => '70x20' %>
+  </p>
+
+  
+<% end %>
+</div>

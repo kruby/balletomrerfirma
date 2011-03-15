@@ -1,0 +1,31 @@
+<div id="wrapper_border">
+
+	<div id="wrapper_basic"><br>
+		<%= link_to '[Tilbage]', assets_path, :class => 'link_back' %>
+		<p class='headline'><%=h @asset.description rescue nil %></p>
+		<p class='text'>
+			Kopier stien under den billedstørrelse du foretrækker,<br>
+			og sæt stien direkte ind i dine sider, så du kan vise fotos der.
+		</p>
+		
+		<% @image_sizes = [:original, :image_500, :image_400, :image_300, :image_200, :image_100, :image_50, :thumb] %>
+		<% for image_size in @image_sizes %>
+			<div class="wrapper_image_show">
+				<% @url_1 = @asset.photo.url(image_size) rescue nil%>
+				<% @url_2 = @asset.photo.url(image_size) rescue nil %>	
+				<%= image_tag @asset.photo.url(image_size) rescue nil %><br>
+				
+				<% @link = '!http://sundmedkost.dk' + @asset.photo.url(image_size) + '!' rescue nil %>
+				
+				<div class="image_link"><%= @link %>
+				<%= clippy(@link) %></div>
+				
+				<!-- <div class="image_link">!http://sundmedkost.local<%#= h @asset.photo.url(image_size) rescue nil %>!</div> -->
+			</div>
+		<% end %>
+
+<%#= link_to 'Edit', edit_asset_path(@asset) %>
+<%#= link_to '[Tilbage]', assets_path %>
+
+	</div>
+</div>

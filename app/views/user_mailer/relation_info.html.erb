@@ -1,0 +1,19 @@
+Kundeinfo fra SundMedKost,<br><br>
+
+<b>Næste aftale</b><br>
+<%= @relation.next_action.strftime("%d.%m.%y - %H:%M") rescue nil %>
+
+<%= textilize('<b>Kontakt info</b><br>' + @relation.contact_info) rescue nil %>
+
+<b>Adresse</b><br>
+<%= @relation.company rescue nil %><br>
+<%= @relation.address rescue nil %><br>
+<%= @relation.postno rescue nil %> <%=@relation.city rescue nil %><br>
+
+<%= textilize('<b>Log</b><br>' + @relation.log) rescue nil%><br>
+
+--------------------------------------------------------------------<br>
+Sendt fra http://sundmedkost.dk
+
+
+

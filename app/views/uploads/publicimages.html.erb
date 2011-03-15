@@ -1,0 +1,22 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+	
+	<h1>Indhold public/images </h1>
+	
+
+
+<table>
+  <tr>
+	<th>Filstien og filnavn</th>
+  </tr>
+
+<% for file in @files %>
+<% @filelink = file.gsub('public/', '') %>
+<% @filename = file.gsub('public/images/', '') %>
+  <tr>
+	<td><%= link_to @filename, @filelink %></td>
+</tr>
+<% end %>
+</table>
+
+</div>

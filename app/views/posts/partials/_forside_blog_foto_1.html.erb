@@ -1,0 +1,15 @@
+<% if logged_in? %>
+
+	<ul id="sortable_posts">
+		
+		<%= render :partial => "posts/partials/forside_posts" %>
+		
+	</ul>
+
+	<%#= sortable_element("sortable_posts", :url => {:controller => 'posts', :action => 'sort_posts_positions'} )%>
+
+<% else %>	
+
+	<%= render :partial => "posts/partials/forside_posts" %>
+	
+<% end %>

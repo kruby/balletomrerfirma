@@ -1,0 +1,23 @@
+<p>
+  <b>Aktiv:</b>
+  <%=h @list.active %>
+</p>
+
+<p>
+  <b>Navn:</b>
+  <%=h @list.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @list.description %>
+</p>
+
+<p>
+  <b>Model name:</b>
+  <%=h @list.model_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>

@@ -1,0 +1,955 @@
+* {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.status_info {
+    float: left;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.status_info, .status_info a {
+    color: #FFF;
+    font-size: 10px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+
+
+body {
+	background-color:#FFF;
+	border:none;
+	background-image: url(images/menu_baggrund.gif);
+
+	background-repeat: repeat-y;
+	margin: 0px 0px 0px 0px;
+}
+
+h1 {
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+}
+
+table {
+	margin-top: 0px;
+	margin-bottom: 1em;
+	border-spacing: 0px;
+	border-collapse: collapse;
+	/*	border-top: 1px solid #999;
+	border-right: 1px solid #999;
+	background-color: #999;*/
+}
+
+th {
+	font-size:14px;
+	font-weight:bold;
+	color:#003300;
+	border: 1px solid #999;
+}
+td {
+
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	vertical-align:top;
+	border: 1px solid #999;	
+}
+
+
+.login1 {
+
+	font-size:16px;
+	font-weight:normal;
+	text-align:left;
+	color:#999999;
+	margin-top:10px;
+	/*overflow: scroll;
+	width:300px;
+	height:400px;*/
+}
+
+#edit_tabel {
+	position: absolute;
+	top: 200px;
+	left: 150px;
+	width: 700px;
+}
+#admin > vis_ret_slet a{
+	/*position:absolute;
+	left: 130px;
+	top: 200px;*/
+
+	font-size:10px;
+	font-weight:bold;
+	text-align:center;
+	color:#000000;
+	text-decoration: none;
+}
+
+
+
+/*STYLES TIL ADMINISTRATIONS SIDERNE (FORMULARER)*/
+
+#admin_formular {
+	z-index:0;
+	position:absolute;
+	top: 187px;
+	left: 150px;
+	color:#000000;
+	margin: 0px;
+}
+
+#admin_formular .slogan {
+	width: 450px;
+	height: 35px;
+}
+
+#admin_formular #left {
+	width: 400px;
+	margin-right: 15px;
+	/*	border-right: 1px solid #888;*/
+	float: left;
+}
+#admin_formular #right {
+	width: 600px;
+	margin-right: 0px;
+	float: left;
+}
+
+#admin_formular p{
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#888;
+	margin-top:10px;
+	line-height: 20px;
+}
+#admin_formular p b{
+	position: relative;
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#888;
+	margin-top:10px;
+	margin-left: 2px;
+}
+#admin_formular .brd1 {
+	font-size:10px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	margin-left: 2px;
+	/*overflow: scroll;
+	width:300px;
+	height:400px;*/
+}
+#admin_formular h1 {
+	font-size:20px;
+	font-weight:bold;
+	text-align:left;
+	color:#888;
+	margin: 0px;
+	padding: 0px;
+}
+#admin_formular a{
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#888;
+	margin-right:5px;
+	margin-top:5px;
+	margin-left: 2px;
+	text-decoration:none;
+}
+#admin_formular .button {
+	border-collapse: collapse;
+	width: auto;
+	font-size:11px;
+	font-weight:normal;
+	text-align:right;
+	color:#888;
+	border: 0px;
+	cursor: pointer;
+	background-color: #FFF;
+	padding: 0px;
+}
+#admin_formular input {
+	font-size:12px;
+	padding: 2px;
+	background-color: #D4E6CD;
+	font-weight:normal;
+	text-align:left;
+	color:#000;
+
+}
+
+#admin_formular textarea {
+	font-size:12px;
+	padding: 2px;
+	background-color: #D4E6CD;
+	font-weight:normal;
+	text-align:left;
+	color:#000;
+	height: 300px;
+	width: 600px;
+}
+
+#admin_formular textarea#relation_order {
+	height: 165px;
+}
+
+#admin_formular textarea#relation_contact_info {
+	height: 200px;
+	width: 370px;
+}
+
+#admin_formular textarea#relation_log {
+	height: 472px;
+	width: 450px;
+}
+
+#admin_formular .edit_photo  {
+	border: 2px solid #888;
+	margin-top: 3px;
+}
+
+#admin_formular .ov{
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#888;
+	margin-top:10px;
+	margin-left:3px;
+}
+#admin_formular .dropdowns{
+	position: relative;
+	height: 55px;
+}
+
+#admin_formular .dropdowns .drop_down_1{
+	position: absolute;
+	top: 0px;
+}
+#admin_formular .dropdowns .drop_down_1 b{
+	line-height: 22px;
+}
+#admin_formular .dropdowns .drop_down_2{
+	position: absolute;
+	left: 150px;
+	top: 0px;
+	margin-left: 5px;
+}
+#admin_formular .dropdowns .drop_down_2 b{
+	line-height: 22px;
+}
+
+#admin_formular .date_and_time {
+	position: relative;
+	height: 50px;
+	width: 475px;
+}
+#admin_formular .date_and_time .date{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+#admin_formular .date_and_time .time{
+	position: absolute;
+	left: 230px;
+	top: 0px;
+}
+
+#admin_formular .date_and_time input{
+	text-align: center;
+}
+
+#admin_formular .dropdowns p b{
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#888;
+	margin-top:10px;
+	margin-left: 4px;
+	line-height: 18px;
+}
+#admin_formular .errorExplanation ul li, .errorExplanation ul{
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size:12px;
+	line-height: 14px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+	z-index:600;
+	width: 600px;
+	list-style: none;
+	background-color: #FFF;
+}
+#admin_formular  .errorExplanation h2{
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size:18px;
+	line-height: 14px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+	z-index:600;
+	width: 600px;
+	list-style: none;
+	background-color: #FFF;
+	padding-top: 14px;
+}
+
+#admin_formular .bruger_kategori{
+	width: 240px;
+
+}
+
+#admin_formular #event_description, #admin_formular #activity_description {
+	width: 350px;
+	height: 50px;
+}
+
+#admin_formular #event_start_date, #admin_formular #event_end_date {
+	width: 80px;
+}
+
+#admin_formular #activity_start_date, #admin_formular #activity_end_date {
+	width: 80px;
+}
+
+#admin_formular #start_stop_dato p.dato_felt {
+	float: left;
+	margin: 0px 15px 0px 0px;
+}
+
+
+/*STYLES TIL ADMINISTRATIONS SIDERNE (SHOW)*/
+
+#admin_show {
+	/*background-color:#FFFF66;*/
+	z-index:0;
+	position:absolute;
+	top: 200px;
+	left: 150px;
+	/*width:400px;
+	height:500px;*/
+
+	/*border:#999999 thin dotted;*/
+	color:#000000;
+}
+#admin_show p{
+
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	width:500px;
+}
+#admin_show h1{
+
+	font-size:20px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+	margin-left: 0px;
+}
+#admin_show a{
+
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#CC0000;
+	margin-right:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+#admin_show .ov{
+
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	margin-left:3px;
+}
+
+
+
+/*HERTIL STYLES TIL ADMINISTRATIONS SIDERNE (SHOW)*/
+
+
+.forside1 {
+
+	font-size:36px;
+	width:600px;
+	font-weight:bold;
+	text-align:left;
+	color:#000000;
+	margin-left:120px;
+	margin-top:40px;
+}
+.forside2 {
+
+	font-size:20px;
+	font-weight:bold;
+	width:600px;
+	text-align:left;
+	color:#000000;
+	margin-left:120px;
+	margin-top:5px;
+}
+.over1 {
+
+	font-size:36px;
+	font-weight:bold;
+	text-align:center;
+	color:#000000;
+}
+.over2 {
+
+	font-size:20px;
+	font-weight:bold;
+	text-align:left;
+	margin-left:120px;
+	color:#000000;
+}
+/* kasser */
+
+#kasse_0 {
+	/*background-color:#FFFF66;*/
+	z-index:100;
+	position:absolute;
+	top: 200px;
+	left: 130px;
+	width:400px;
+	height:500px;
+	padding: 20px;
+
+	/*border:#999999 thin dotted;*/
+	color:#000000;
+}
+#kasse_0 p{
+
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#CC0000;
+	margin-top:10px;
+}
+#kasse_0 .brd1{
+
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:2px;
+	margin-left:3px;
+}
+#kasse_0 .ov{
+
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#888;
+	margin-top:10px;
+	margin-left:3px;
+}
+#kasse_0 a{
+
+	font-size:14px;
+	font-weight:bolder;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	text-decoration:none;
+}
+
+
+#kasse_1 {
+	/*background-color:#FFFF66;*/
+	z-index:100;
+	position:absolute;
+	top: 200px;
+	left: 130px;
+	width:350px;
+	height:520px;
+	padding: 10px 20px 10px 20px;
+	background-color:#FFFFFF;
+	border:#000 1px solid;
+	color:#000000;
+}
+
+#kasse_1 .image1{
+}
+
+#kasse_1 .foto_lille{
+	position:absolute;
+	top: 460px;
+	left: 0px;
+	background-color:#C9E9F2 ;
+	border-top: 1px solid #000;
+
+}
+
+#kasse_1 .foto_stort_1{
+	position:absolute;
+	top: 360px;
+	left: 0px;
+	/*background-color:#C9E9F2 ;*/
+	/*border-top: 1px solid #999;*/
+
+}
+
+#kasse_1 .foto_stort_2{
+	position:absolute;
+	top: 330px;
+	left: 0px;
+	/*background-color:#C9E9F2 ;*/
+	/*border-top: 1px solid #999;*/
+
+}
+
+#kasse_1 .kontakt {
+	position: absolute;
+	text-align: center;
+	left: 234px;
+	top: 382px;
+	font-size:9px;
+	font-weight:bolder;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	font-style: italic;
+	z-index: 1000;
+}
+
+#kasse_1 h1  {
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+}
+
+#kasse_1 h2  {
+	margin-bottom: 10px;
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+}
+
+#kasse_1 h3  {
+	margin-top: -10px;
+	font-size:10px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+}
+
+#kasse_1 p {
+	margin-top:5px;
+	margin-bottom: 2px;
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+}
+
+#kasse_2 {
+	z-index:0;
+	position:absolute;
+	top: 200px;
+	left: 530px;
+	width:240px;
+	height:540px;
+	padding: 0px;
+	background-color:#FDF2DE;
+	border:#000 1px solid;
+	color:#000000;
+}
+
+#kasse_2 .blok_1 {
+	position:relative;
+	background-color:#FEE347;
+	/*border-top:#999999 1px solid;*/
+	border-bottom:#000 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	display: block;
+	text-transform: uppercase;
+}
+#kasse_2 .blok_2 {
+	position:relative;
+	background-color:#FEE347;
+	border-top:#000 1px solid;
+	border-bottom:#000 1px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	margin-top: 10px;
+	display: block;
+	text-transform: uppercase;
+}
+
+#kasse_2 .brd1 {
+
+	font-size:10px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:2px;
+	margin-left:15px;
+	margin-right: 15px;
+
+}
+
+#kasse_2 .rub1 {
+
+	font-size:12px;
+	font-weight:bold;
+	text-align:left;
+	color:#003300;
+	margin-bottom: 3px;
+
+}
+
+#kasse_2 .rub2  {
+	font-size:12px;
+	font-weight:bold;
+	text-align:left;
+	margin-left:15px;
+	margin-right: 15px;
+	margin-top:5px;
+	color:#CC0000;
+}
+
+#kasse_2 .pagination_info {
+	font-size:10px;
+	line-height:10px;
+	font-weight:normal;
+	text-align:left;
+	margin-left:0px;
+	margin-top:0px;
+	color:#003300;
+}
+
+#kasse_2 .pagination {
+	font-size:10px;
+	font-weight:normal;
+	text-align:left;
+	margin-left:0px;
+	margin-top:0px;
+	color:#003300;
+}
+
+#kasse_2 .pagination a:link {
+	font-size:10px;
+	font-weight:normal;
+	text-align:left;
+	margin-left:0px;
+	margin-right: 0px;
+	margin-top:0px;
+	color:#003300;
+}
+
+#kasse_2 .pagination a:hover {
+	font-size:10px;
+	font-weight:normal;
+	text-align:left;
+	margin-left:0px;
+	margin-right: 0px;
+	margin-top:0px;
+	color:#003300;
+}
+
+#kasse_2 .pagination a:visited {
+	font-size:10px;
+	font-weight:normal;
+	text-align:left;
+	margin-left:0px;
+	margin-right: 0px;
+	margin-top:0px;
+	color:#003300;
+}
+
+#kasse_2 .pagination a:active {
+	font-size:10px;
+	font-weight:normal;
+	text-align:left;
+	margin-left:0px;
+	margin-right: 0px;
+	margin-top:0px;
+	color:#003300;
+}
+
+#kasse_3 {
+	position:absolute;
+	top: 750px;
+	left: 130px;
+	width:600px;
+	height:70px;
+	padding: 20px;
+	background-color:#FFFFFF;
+	border:#000 1px solid;
+	color:#000000;
+}
+
+#kasse_3 .rub2  {
+	font-size:14px;
+	font-weight:bold;
+	text-align:left;
+	margin-left:0px;
+	margin-right: 15px;
+	margin-top:5px;
+	color:#CC0000;
+}
+
+.brd1 {
+
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:0px;
+	/*overflow: scroll;
+	width:300px;
+	height:400px;*/
+}
+
+.rub_top {
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#FFF;
+	width:600px;
+	margin-left:150px;
+}
+.rub1 {
+	/*position:absolute;
+	left: 130px;
+	top: 200px;*/
+
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#003300;
+}
+
+login1 > a {
+	/*position:absolute;
+	left: 130px;
+	top: 200px;*/
+
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+}
+.flash {
+	/*position:absolute;
+	left: 130px;
+	top: 200px;*/
+
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#CC0000;
+	width:300px;
+	margin-left:20px;
+}
+.flash_menu {
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#FFF;
+	width:300px;
+	margin-left: 50px;
+}
+
+.time_stamp {
+font-size:10px;
+font-weight:normal;
+text-align:left;
+color:#FFF;
+width:300px;
+margin-left:10px;
+}
+
+.foto_prod {
+	z-index: 50;
+	margin-left: -20px;
+	float: left;
+
+}
+
+.foto1 {
+	text-align:center;
+	margin-top:50px;
+}
+.streg {
+	height: 100px;
+}
+.top_foto
+{
+	margin: 0px 0px 0px 0px;
+	height: 125px;
+	background-color: #fff;
+}
+
+/* Menu top */
+
+#menu_top {
+	/*background-image: url(images/menu_red.jpg);
+		background-repeat: repeat-x;*/
+	padding:0;
+	margin:0;
+	background-color: #696;
+	color:#888;
+	float:left;
+	height:30px;
+	width:100%;
+	list-style:none;
+	font-weight:bold;
+	font-size:14px;
+	padding-top:10px;
+	border-bottom:1px solid #888;
+	border-top:1px solid #D4E6CD;
+	z-index:100;
+}
+
+/* Menu left */
+
+#menu_left ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 110px; /* Width of Menu Items */
+	border-bottom: 0px solid #888;
+	border-top: 0px solid #888;
+	z-index:200;
+	background-color: #FFF;
+	color:#FFCC00;
+	font-weight:bold;
+	font-size:11px;
+	float: left;
+}
+
+ul li {
+	position: relative;
+	z-index:200;
+}
+
+li ul {
+	position: absolute;
+	left: 110px; /* Set 1px less than menu width */
+	top: 0;
+	display: none;
+	z-index:200;
+}
+
+/* Styles for Menu Items */
+ul li a {
+	display: block;
+	text-decoration: none;
+	color: #888;
+	/*	background:white; *//* IE6 Bug */
+	padding: 5px;
+	border-bottom: 1px solid #888;
+	z-index:200;
+}
+ul li.admin_navlabel a {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	background:#FFF; /* IE6 Bug */
+	padding: 5px;
+	border-bottom: 1px solid #888;
+	z-index:200;
+}
+
+ul li.admin_navlabel ul li a {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	/*background: white;*/ /* IE6 Bug */
+	padding: 5px;
+	border-bottom: 1px solid #000;
+	z-index:200;
+	background-image: url(images/menu_baggrund_110.gif);
+	background-repeat: repeat-y;
+}	
+
+ul li.admin_navlabel a:hover {
+	display: block;
+	text-decoration: none;
+	color: #000;
+	background: #B7E3B2; /* IE6 Bug */
+	padding: 5px;
+	border-bottom: 1px solid #000;
+	z-index:200;
+}
+
+/* Fix IE. Hide from IE Mac \*/
+* html ul li { float: left; height: 1%; z-index:200; }
+* html ul li a { height: 1%; z-index:200;}
+/* End */
+
+ul li a:hover { 
+	color: #888; 
+	background: #B7E3B2; 
+	z-index:200;
+	border-bottom: 1px solid #000;
+	} /* Hover Styles */
+
+	li ul li a { 
+		padding: 5px 10px; 
+		z-index:200;
+		font-weight:normal;
+		font-size:11px;
+		text-align:left;
+		background:#888;
+	}
+	/* Sub Menu Styles */
+
+	li:hover ul, li.over ul { 
+		display: block;
+		z-index:200;
+		} /* The magic */
+
+
+		/*FEJL MEDDELELSER*/
+
+
+		input {
+			background-color: #fff;
+		}
+
+		.fieldWithErrors input {
+			border-left: 2px solid #cc0000;
+		}
+
+
+		.fejl_i_bunden ul li{
+			font-family: Helvetica, Arial, Verdana, sans-serif;
+			font-size:12px;
+			line-height: 14px;
+			font-weight:bold;
+			text-align:left;
+			color:#CC0000;
+			z-index:600;
+			width: 600px;
+			list-style: none;
+			padding-top: 5px;
+			padding-left: 0px;
+		}
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<%#= stylesheet_link_tag "/javascripts/css/themes/custom-theme/jquery-ui-.custom.css" %>	
+<%#= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+<%#= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+<%#= stylesheet_link_tag "application", "le-frog/jquery-ui-1.8.9.custom" %>  
+<%#= javascript_include_tag "jquery-ui-1.8.9.custom.min" %>
+<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>	
+<!-- <script type="text/javascript" src="http://gettopup.com/releases/latest/top_up-min.js"></script> -->
+<script type="text/javascript" src="/javascripts/topup/top_up-min.js"></script> 
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link href="/images/mini.gif" rel="shortcut icon"/>
+<title>Morten Madsen - Silkeborg, Denmark</title>
+<%= stylesheet_link_tag ['kruby_adm', 'kruby_tabeller', 'kruby_blog', 'kruby_topup', 'custom-theme/jquery-ui-1.8.9.custom'] %>
+<%= javascript_include_tag ['jquery15', 'jquery-ui', 'application', 'jquery.ui.datepicker-da'] %>
+<%= google_analytics_js %>
+
+</head>
+
+<body>
+	
+<%= yield%>
+
+<%= yield :javascript %>
+
+
+
+</body>
+</html>

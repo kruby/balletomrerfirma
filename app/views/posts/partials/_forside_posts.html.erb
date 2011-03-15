@@ -1,0 +1,80 @@
+<% for post in @posts %>
+	<% content_tag_for :li, post do %>
+		<div class="blogpost">
+
+				<div class="topline">
+					<% if post.attachments.count > 0 %>
+						<div class="title width345"><%= post.title %></div>
+					<% else %>
+						<div class="title"><%= post.title %></div>
+					<% end %>
+
+					<% for attachment in post.attachments %>
+						<% @image = Asset.find(attachment.asset_id).photo.url(:image_50) %>
+						<% @image_show = Asset.find(attachment.asset_id).photo.url(:original)%> 
+						<% @alt = attachment.description rescue nil %>
+						<div id="clip_outer">
+							<div id="clip_inner">
+								<span class='thumb' id='post_images_<%=post.id%>'><%= link_to image_tag(@image, :alt => @alt), @image_show %></span>
+								<!-- HER HAR VI BRUGT POST.ID TIL AT GØRE GRUPPEN AF FOTOS UNIK, SOM DET OGSÅ SES NEDERST I JAVASCRIPT I GROUP -->
+							</div>
+						</div>
+
+					<% end %>
+					
+				</div> <!-- topline -->
+				<div class="date_time">
+					Oprettet: <%=h post.created_at.strftime("%d.%m.%y - %H:%M") %> af 
+					<span class="author"><%=h User.find(post.user_id).blogname %></span>
+					<% if post.updated_at > post.created_at + 10.days %>
+						- Opdateret: <%=h post.updated_at.strftime("%d.%m.%y - %H:%M") %>
+					<% end %>
+				</div>
+
+				<div class="body">
+					<% @length = 250 %>
+					<%= truncate(textilize(post.body), :length => @length, :separator => ' ' )%>
+					<% if @length <= post.body.length %><!-- <br> -->
+					   <%= link_to '(læs mere)', post_path(post.id), :class => 'links' %>
+					<% end %>
+					  
+					<%#= textilize(post.body) %>					
+
+				</div>
+
+		</div>
+
+	<% end %>
+	
+	
+	<% content_for :javascript do %>
+
+	  <% javascript_tag do %>
+
+	     		TopUp.addPresets({
+			    "#post_images_<%= post.id %> a": {
+			      group: "post_images_<%= post.id %>",
+				  title: "{alt} - {current} af {total}",
+			      layout: "dashboard",
+			      modal: 1,
+			      resizable: 0,
+			      readAltText: 1,
+				  shaded: 1,
+				  effect: 'switch'
+				    },
+			    ".shaded": {
+			      shaded: 1
+			    }
+			  });
+
+
+	    <% end %>
+
+	<% end %>  
+	
+<% end %>
+
+
+
+
+

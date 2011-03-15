@@ -1,0 +1,18 @@
+	<%= render :partial => "layouts/menu" %>
+			
+<div id="admin_formular">
+	
+	<%= render :partial => "posts/partials/edit" %>
+
+
+<% if User.find(current_user.id).category == 'Admin' %>
+	<div id="admin_liste">
+	
+	
+		<%= render :partial => "posts/partials/attachments_sortable" %>
+	
+
+	</div>
+<% end %>
+
+</div>

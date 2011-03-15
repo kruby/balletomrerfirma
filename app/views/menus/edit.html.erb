@@ -1,0 +1,37 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+	
+<h1>Redigering menu</h1>
+
+<%= error_messages_for :menu %>
+
+<% form_for(@menu) do |f| %>
+
+<%= f.submit "[Opdater]", :class => 'button'%>
+	<%#= link_to '[Vis]', @menu %>
+	<%= link_to '[Tilbage]', menus_path %>
+
+  <p>
+    <b>Navn</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Titel</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Indhold</b><br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <b>Aktiv</b><br />
+    <%= f.check_box :active %>
+  </p>
+
+  
+<% end %>
+
+</div>

@@ -1,0 +1,139 @@
+* {
+	font-family:Helvetica, Arial, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+	text-align: center;
+}
+
+a {
+	font-size: 12px;
+	text-decoration: none;
+	color: #FFF;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#wrapper_border {
+	padding: 0px;
+	width: 810px;
+	height: auto;
+	border: 1px solid #6EA1B4;;
+	margin-right: auto; 
+	margin-left: auto;
+	background-color: #c3d3de;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#wrapper {
+	/*display: table;*/
+	padding: 0px;
+	margin-right: auto; 
+	margin-left: auto;
+	border: 5px solid #fff;
+	width: 800px;
+	height: auto;
+	background-position: top right;
+	background-repeat: repeat-y;
+	background-image: url(images/ramme_baggrund.gif);
+}
+
+#wrapper_basic {
+	padding: 0px;
+	margin-right: auto; 
+	margin-left: auto;
+	border: 5px solid #fff;
+	width: 800px;
+	height: auto;
+}
+
+#wrapper_border_image_show {
+	padding: 0px;
+	width: 810px;
+	height: auto;
+	border: 1px solid #6EA1B4;;
+	margin-right: auto; 
+	margin-left: auto;
+	background-color: #c3d3de;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#wrapper_basic_image_show {
+	padding: 0px;
+	margin-right: auto; 
+	margin-left: auto;
+	border: 5px solid #fff;
+	width: 800px;
+	height: auto;
+}
+
+.wrapper_image_show {
+	padding: 0px;
+	margin-right: auto; 
+	margin-left: auto;
+	margin-bottom: 20px;
+	width: 620px;
+	height: auto;
+	overflow: auto;
+	text-align: center;
+}
+
+.wrapper_image_show img {
+	margin-right: auto; 
+	margin-left: auto;
+	border: 1px solid #999;
+}
+
+.wrapper_image_show .image_link {
+	width: 550px;
+	height: 30px;
+	/*background-color: #E8F2FF;*/
+	background-color: #FFF;
+	border: 1px solid #999;
+	margin-right: auto; 
+	margin-left: auto;
+	text-align: center;
+	font-size: 10px;
+	overflow: hidden;
+	line-height: 30px;
+}
+
+
+.wrapper_image_show #clippy {
+	background-color: #FFF;
+	position: relative;
+	top: 8px;
+	left: 5px;
+	width: 15px;
+	overflow: hidden;
+}
+
+#wrapper_basic .headline {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 20px 0px 5px 0px;
+	}
+
+#wrapper_basic .text {
+	text-align: center;
+	font-size: 12px;
+	font-weight: normal;
+	overflow: hidden;
+	line-height: 16px;
+	width: 350px;
+	margin: 10px auto 20px auto;
+}
+
+
+
+#wrapper #forside_box_1 {
+	border-bottom: 2px solid #fff;
+	width: 750px;
+	height: 90px;
+	background-color: #126773;
+	margin-right: auto; 
+	margin-left: auto;
+	margin-bottom: 0px;
+}

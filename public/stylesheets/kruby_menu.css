@@ -1,0 +1,75 @@
+/* menu top */
+#menu {
+position:relative;
+margin-bottom: 0;
+margin-top: 0;
+margin-right: auto; 
+margin-left: auto;
+border-bottom: 1px solid #888;
+border-top: 1px solid #888;
+font-family: helvetica, arial, verdana, sans-serif;	
+text-align: center;
+letter-spacing: 3px;
+font-weight: normal;
+font-size:10px;
+top: 0px;
+left: 0px;
+width: 600px;
+z-index:210;
+}
+
+#menu ul {
+margin: auto;
+padding: 5px 0 5px 0;
+list-style:none;
+position: relative;
+left: 0px;
+}
+#menu ul li {
+display: inline;
+color: #888;
+}
+#menu ul li.streg a {
+margin: 0;
+padding-left: 5px;
+padding-right: 10px;
+text-decoration:none;
+vertical-align: top; /*Virker godt for Firefox.*/
+border-right: 1px solid #888;
+color: #888;
+}
+#menu ul li.uden_streg a{
+margin: 0px;
+padding-left: 5px;
+padding-right: 5px;
+text-decoration:none;
+vertical-align: top; /*Virker godt for Firefox.*/
+border: none;
+color: #888;
+}
+#menu ul li a:hover {
+color: #fff;
+text-decoration:none;
+/*vertical-align: middle;*/ 
+}
+#menu ul li a:active{
+color: #888;
+text-decoration:none;
+}
+#menu ul .lodret {
+margin: 0px;
+padding-top: 0px;
+padding-bottom: 10px;
+padding-right: 10px;
+padding-left: 10px;
+position: relative;
+top: -10px;
+left: 0px;
+}
+
+#flashcontent {
+position: relative;
+top: 0px;
+border-top: 1px solid #888;
+border-bottom: 1px solid #888;
+}

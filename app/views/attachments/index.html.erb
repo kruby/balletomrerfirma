@@ -1,0 +1,16 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>Fotos vedhæftet <%#= @attachable.category.downcase %> <%= @attachable.id %> <%= '"' +  @attachable.title + '"' %></h1>
+
+<% if params[:event_id] %>
+
+<%= render :partial => "attachments/partials/attachable_draggable_event" %>
+
+<% else %>
+
+<%= render :partial => "attachments/partials/attachable_draggable_post" %>
+
+<% end %>
+
+</div>

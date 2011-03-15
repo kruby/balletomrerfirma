@@ -1,0 +1,11 @@
+<p>
+  <b>Beskrivelse:</b>
+  <%=h @upload.description %>
+</p>
+
+<p>
+  <b>Filnavn:</b>
+  <%=h @upload.photo_file_name %>
+</p>
+<%= link_to '[Ret]', edit_upload_path(@upload) %> |
+<%= link_to '[Tilbage]', uploads_path %>

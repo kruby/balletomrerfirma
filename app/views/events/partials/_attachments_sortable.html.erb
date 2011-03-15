@@ -1,0 +1,69 @@
+<h2>Tilhørende fotos <%= link_to '[Opdater]', edit_event_path(:event_id => params[:id])%>
+<%= link_to '[Tilføj fotos]', events_attachments_paged_path(:event_id => params[:id], :page => 1)%> 
+<br> 
+<%#= link_to '[Tilføj fotos]', add_to_post_path (:id => params[:id] )%>
+</h2>
+
+
+
+<div id="receive_images">
+	
+	<ul id="sortable_attachments">
+
+		<% for attachment in @event.attachments.find(:all, :order => 'position') %>
+	
+		<% @image = Asset.find(attachment.asset_id).photo.url(:image_50) rescue nil%>
+		<% @attachment_and_id = attachment.type.to_s + '_' + attachment.id.to_s %>
+	
+		<% content_tag_for(:li, attachment, :class => 'handle') do %>
+				
+				
+				<%#= image_tag(@image, :id => @attachment_and_id, :alt => attachment.description) %>
+				<%= image_tag(@image, :id => @attachment_and_id, :alt => attachment.description, :class => 'handle', :title => attachment.description ) rescue nil %>
+				<div id="sortable_attachments_menus">
+					<%= link_to '[Ret]', edit_attachment_path(attachment.id, :event_id => @event.id) %>
+					<%= link_to '[÷]', attachment, :confirm => 'Sikker på du vil slette?', :method => :delete %>
+				</div>
+			<% end %>
+	
+		<% end %>
+		
+		<%#= sortable_element("sortable_attachments", :constraint => false, :url => {:controller => 'attachments', :action => 'sort_attachments_positions', :post_id => @post.id})%>
+	
+	</ul>
+
+
+
+</div>
+
+
+<% content_for :javascript do %>
+
+  <% javascript_tag do %>
+     $('#sortable_attachments').sortable(
+        {
+          axis: 'x',
+          <!-- dropOnEmpty:false,  -->
+          handle: '.handle', 
+          <!-- cursor: 'crosshair', -->
+          <!-- items: 'li', -->
+          <!-- opacity: 0.6, -->
+          <!-- scroll: true, -->
+		  <!-- zIndex: 5, -->
+		   <!-- grid: [50, 20], -->
+		  containment: 'document',
+          update: function(){
+            $.ajax({
+                type: 'post', 
+                data: $('#sortable_attachments').sortable('serialize') + '&event_id=<%=@event.id-%>', 
+                dataType: 'script', 
+                complete: function(request){
+                    $('#sortable_attachments').effect('highlight');
+                  },
+                url: '/attachments/prioritize_attachments'})
+            }
+          });
+
+    <% end %>
+
+<% end %>

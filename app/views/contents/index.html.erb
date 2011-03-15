@@ -1,0 +1,65 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+<h1>Indhold fra: 
+	<% for type in @types %>
+		<%= h "(" + type.resource_type + ") " %> 
+	<% end %>
+</h1>
+<!-- <%#= link_to '[Ny side]', new_content_path %> Der må ikke oprettes ny content da det skal komme fra Newsarchives, Recipe, Products etc. -->
+
+<table id='zebra_stripes'>
+  <tr>
+	<th>Menu navn</th>
+	<th class='pos'>Akt.</th>
+	<th>Kategori</th>    
+	<th class='pos'>Pos.</th>
+    <th>Res. type</th>
+	<th>Res. ID</th>
+	<th>Parent</th>
+	<th>Titel</th>
+	<th>Controller</th>
+	<th>Redir.</th>
+	<th>Controller</th>
+	<th>Action</th>
+	<th>Handling</th>
+	
+  </tr>
+
+<% for content in @contents %>
+<% ci = content.resource_id %>
+
+<% if content.resource_type == 'Page'; ct = Page; end %>
+<% if content.resource_type == 'Recipe'; ct = Recipe; end %>
+<% if content.resource_type == 'Newsarchive'; ct = Newsarchive; end %>
+<% if content.resource_type == 'Product'; ct = Product; end %>
+<% if content.resource_type == 'Menu'; ct = Menu; end %>
+
+
+
+  <tr>
+    <td><%=h content.navlabel %></td>
+	<td class='pos'><%=link_to active_test(content.active), :action => 'active', :id => content.id%></td>
+	<td class='pos'><%= link_to content.category, :action => 'category_content', :id => content.id rescue '-'%></td>
+	<td class='pos'><%=h content.position %></td>
+    <td><%=h content.resource_type %></td>
+	<td class='pos'><%=h content.resource_id %></td>
+	<td class='pos'><%=h content.parent_id %></td>
+	<td><%=h truncate(ct.find(ci).title, :length => 20) rescue nil -%></td>
+	<td><%=h content.controller_name %></td>
+	<td class='pos'><%=link_to active_test(content.redirect), :action => 'active_redirect', :id => content.id%></td>
+    <!-- <td class="pos"><%#=h active_test(content.redirect) %></td> -->
+	<td><%=h content.controller_redirect %></td>	
+	<td><%=h content.action_redirect %></td>	
+    <td><%#= link_to '[Vis]', content %>
+    <%= link_to '[Ret]', edit_content_path(content) %>
+    <%= link_to '[Slet]', content, :confirm => 'Er du sikker?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

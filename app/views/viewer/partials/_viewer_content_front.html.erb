@@ -1,0 +1,54 @@
+<div id="content_outer_extra">
+	
+	<div id="content_outer">
+		<div id="content_left">
+			<div id='headline'>
+			<div id="blog_by">
+				<span id='blog'>BLOG</span> <span id='by'>af Morten Madsen </span>
+			</div>
+
+			<%= will_paginate @posts, :param_name => 'page_post' %>
+			
+			</div>
+			<div id="forside_blog_wrapper">
+				
+				
+				<%= render :partial => "posts/partials/forside_blog_foto_1" %>
+				
+			</div>
+			
+
+		</div>
+
+		<div id="content_right">
+			<div id="forums">
+				<div id="facebook">
+					<%= link_to image_tag('/images/facebook.gif'), @facebook %>
+				</div>
+				<div id="twitter">
+					<%= link_to image_tag('/images/twitter.gif'), @twitter %>
+				</div>
+				<div id="youtube">
+					<%= link_to image_tag('/images/youtube.gif'), @youtube %>
+				</div>
+
+			</div>
+			
+			<div id="latest_photos">
+				<p class="headline"><%= link_to 'Sidste nye fotos', eventslist_path %></p> 
+				
+				<%= render :partial => "events/partials/forside_events" %>
+				
+			</div>
+			
+			<div id="activities">
+				<p class="headline">Kommende aktiviteter</p>
+				
+				<%= render :partial => "activities/partials/forside_activities" %>
+				
+			</div>
+
+		</div>
+	</div>
+
+</div>

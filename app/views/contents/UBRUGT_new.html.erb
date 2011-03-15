@@ -1,0 +1,48 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+<h1>New content</h1>
+
+<%= error_messages_for :content %>
+
+<% form_for(@content) do |f| %>
+
+<p><label for="category" class = 'ov'>Kategori</label><br/>
+<%= f.select(:category, ['User', 'Editor', 'Public', 'Admin'], {}, :class => 'bruger_kategori') %>
+</p>
+
+  <p>
+    <b>Navn</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Resource</b><br />
+    <%= f.text_field :resource_id %>
+  </p>
+
+  <p>
+    <b>Resource type</b><br />
+    <%= f.text_field :resource_type %>
+  </p>
+
+<p>
+  <b>Redirect</b>
+  <%=f.check_box :redirect, :size => '3' %>
+</p>
+
+<p>
+    <b>Ctrl.-redirect</b><br />
+    <%= f.text_field :controller_redirect %>
+</p>
+
+<p>
+    <b>Action-redirect</b><br />
+    <%= f.text_field :action_redirect %>
+</p>
+
+  <p>
+    <%= f.submit "[Opret]", :class => 'button'%>
+	<%= link_to '[Tilbage]', contents_path %>
+  </p>
+<% end %>
+</div>

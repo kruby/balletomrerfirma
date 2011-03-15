@@ -1,0 +1,30 @@
+<% form_for(@post) do |f| %>
+<%= f.hidden_field(:user_id, :value => current_user.id) %>
+<h1>Nyt indlæg til bloggen
+	<%= f.submit "[Opret]", :class => 'button' %><%#= link_to '[Vis]', @post %> <%= link_to '[Tilbage]', bloggen_path %>
+	
+	</h1>
+
+	<%= error_messages_for :post %>
+		
+	<p>
+	    <b>Aktiv</b><br />
+	   	<%# f.:active = true %>
+	 	<%= f.check_box :active, :value => 1, :checked => true %>
+	</p>
+
+	  <p>
+	    <b>Titel</b><br />
+	    <%= f.text_field :title %>
+	  </p>
+
+	  <p>
+	    <b>Indhold</b><br />
+	    <%= f.text_area :body, :size => '60x18' %>
+	  </p>
+
+
+
+
+
+	<% end %>

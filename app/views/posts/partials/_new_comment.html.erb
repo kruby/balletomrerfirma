@@ -1,0 +1,25 @@
+<%= error_messages_for :post %>
+
+<% form_for(@post) do |f| %>
+<h1>
+	Kommentar til: <%= @post_title %> <%= f.submit "[Opret]", :class => 'button' %> <%= link_to '[Tilbage]', bloggen_path %>
+</h1>
+<%= f.hidden_field(:parent_id, :value => @post_id) %>
+<%= f.hidden_field(:user_id, :value => current_user.id) %>  
+
+<p>
+    <b>Overskrift</b><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <b>Indhold</b><br />
+    <%= f.text_area :body %>
+  </p>
+
+<p>
+
+  </p>
+
+<% end %>
+

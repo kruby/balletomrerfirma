@@ -1,0 +1,89 @@
+<h1>Velkommen til bloggen <%= link_to '[Nyt indlæg]', new_post_path %> <%= link_to '[Miniblog]', miniblog_path %></h1>
+
+<% form_for @search do |f| %>
+<p id="search_form">
+	Titel <%= f.text_field :title_like, :size => 15, :class => 'search_field' %>
+	Indhold <%= f.text_field :body_like, :size => 15, :class => 'search_field'  %>
+	Forfatter <%= f.text_field :author, :size => 5, :class => 'search_field'  %>
+	<%= f.submit "[Søg]", :name => nil, :class => 'button'  %>
+	<%= link_to '[Find alle]', bloggen_path %>
+</p>
+
+<% end %>
+
+<% for post in @posts %>
+
+<div class="blogpost">
+
+	<div class="topline">
+		<span class="title"><%= post.title %></span> - 
+		<span class="author"><%=h User.find(post.user_id).blogname %></span> -
+		<span class="date_time"><%=h post.created_at.strftime("%d.%m.%y - (%H:%M)") %></span>
+
+		<span class="link">
+			<% if current_user.id == post.user_id %>
+				<%= link_to '[Email]', :action => 'email_new_blogpost_created', :id => post.id %>
+				<%= link_to '[Ret]', edit_post_path(post) %>
+				<%= link_to '[Slet]', post, :confirm => 'Er du sikker?', :method => :delete %>
+			<% end %>
+			<%= link_to '[Kommentér]', :action => 'new_comment', :id => post.id %>
+		</span>
+	</div>
+
+
+	<div class="body"><%= textilize(post.body) %></div>
+	
+	<div class="bottomline">
+
+  		<span class="title">Kommentarer <%= post.children.count %><%#= session[:post_id] %></span>
+  			
+  		<span class="link">
+  			<% if session[:post_id] == post.id.to_s and post.children.count > 0 %>
+  				<%= link_to '[Luk]', :action => 'no_comments', :id => post.id %>
+  			<% elsif post.children.count > 0 %>
+  				<%= link_to '[Se]', :action => 'list_comments', :id => post.id %>
+  			<% end %>
+  		</span>
+			
+	</div>
+
+
+</div> <!-- Blogpost -->
+
+			<% if post.id.to_s == session[:post_id] %>
+			
+				<% @children = post.children %>
+				<% @counter = post.children.count %>
+
+					<% @children.each do |comment| %>
+					
+						<div class="backline"></div>
+			
+							<div class="comment">
+
+								<div class="topline">
+
+									<span class="title"><%= comment.title %></span>
+									- <span class="author"><%=h User.find(comment.user_id).blogname %></span>
+									- <span class="date_time"><%=h comment.created_at.strftime("%d.%m.%y - (%H:%M)") %></span>
+									<span class="link">  
+										<% if current_user.id == comment.user_id %>
+											<%= link_to '[Ret]', edit_post_path(comment) %>
+											<%= link_to '[Slet]', comment, :confirm => 'Er du sikker?', :method => :delete %>
+										<% end %>
+									</span>
+									
+								</div>
+
+								<div class="body"><%= textilize(comment.body) %></div>
+
+							</div>
+
+					<% end %>
+
+			<% end %>
+
+
+<% end %>
+
+<span class='pagination_info'><%#= page_entries_info @posts %><%= will_paginate @posts %></span>

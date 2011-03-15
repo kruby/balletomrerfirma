@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  attable_type: MyString
+  attachable_id: 1
+  description: MyString
+  image_size: MyString
+  priority: 1
+  asset_id: 1
+
+two:
+  attable_type: MyString
+  attachable_id: 1
+  description: MyString
+  image_size: MyString
+  priority: 1
+  asset_id: 1

@@ -1,0 +1,54 @@
+<% form_for(@event) do |f| %>
+<%= f.error_messages %>
+
+<h1>
+Rediger begivenhed
+
+<%= link_to '[Vis]', @event %>
+<%= link_to '[Tilbage]', events_path %>
+<%= f.submit '[Opdater]', :class => 'button' %>
+</h1>
+	
+  <p>
+    <%= f.label :Begivenhed %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :Beskrivelse %><br />
+    <%= f.text_area :description %>
+  </p>
+
+<div id="start_stop_dato">
+
+  <p class='dato_felt'>
+    <%= f.label :Start_dato %><br />
+    <%= f.text_field :start_date %>
+  </p>
+
+  <p class='dato_felt'>
+    <%= f.label :Slut_dato %><br />
+    <%= f.text_field :end_date %>
+  </p>
+
+</div>
+
+
+<% end %>
+
+
+<% content_for :javascript do %>
+
+  <% javascript_tag do %>
+
+		$('#event_start_date,#event_end_date').datepicker({
+			showOtherMonths: true,
+			selectOtherMonths: true,
+			showWeek: true,
+			firstDay: 1					
+		});
+
+		$('#event_start_date,#event_end_date').datepicker($.datepicker.regional['da']);
+
+  <% end %>
+
+<% end %>

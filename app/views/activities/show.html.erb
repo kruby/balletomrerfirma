@@ -1,0 +1,28 @@
+<p>
+  <b>Aktiv:</b>
+  <%=h @activity.active %>
+</p>
+
+<p>
+  <b>Titel:</b>
+  <%=h @activity.headline %>
+</p>
+
+<p>
+  <b>Beskrivelse:</b>
+  <%=h @activity.description %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%=h @activity.start_date %>
+</p>
+
+<p>
+  <b>Slut:</b>
+  <%=h @activity.end_date %>
+</p>
+
+
+<%= link_to '[Ret]', edit_activity_path(@activity) %> |
+<%= link_to '[Tilbage]', activities_path %>

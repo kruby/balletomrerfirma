@@ -1,0 +1,99 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>Uploadede fotos <%= link_to '[Ny upload]', new_asset_path %> <%#= submit_tag "[Attach photos]", :class => 'button'%></h1>
+
+<% form_for @search do |f| %>
+<p id="search_form">
+	Beskrivelse <%= f.text_field :description_like, :size => 15, :class => 'search_field' %>
+	Fil navn <%= f.text_field :photo_file_name_like, :size => 15, :class => 'search_field'  %>
+	<%= f.submit "[Søg]", :name => nil, :class => 'button'  %>
+	<%= link_to '[Find alle]', assets_path %>
+</p>
+<!-- <p class='sort_after_text'>
+	Sorting:
+	<%#= order @search, :by => :description %>
+	<%#= order @search, :by => :photo_file_name, :as => 'File name' %>
+	<%#= order @search, :by => :photo_file_size, :as => 'File size' %>
+	
+</p> -->
+
+<% end %>
+
+
+<% form_tag edit_multiple_assets_path do %>
+
+<table id='zebra_stripes'>
+  <tr>
+	<th class="pos">ID</th>
+    <th class='sort_after_text'><%= order @search, :by => :description, :as => 'Beskrivelse' %></th>
+	<th class='sort_after_text'><%= order @search, :by => :photo_file_name, :as => 'Fil navn' %></th>
+	<th class='pos'>Type</th>
+	<th class='pos sort_after_text'><%= order @search, :by => :photo_file_size, :as => 'Fil i Kb' %></th>
+	<th class='pos'>Opdat.</th>
+	<th class='pos sort_after_text'><%= order @search, :by => :photo_updated_at, :as => 'Foto opdat.' %></th>
+	<th>Foto</th>
+	<th></th>
+  </tr>
+
+<% for asset in @assets %>
+	<% @image =  asset.photo.url(:image_100) %>
+	<% @image_show = asset.photo.url(:image_300)%>
+	<% @alt = asset.description + ' (' + asset.id.to_s + ')' %>
+	  <tr>
+		<td><%=h asset.id %></td>
+	    <td><%=h asset.description %></td>
+		<td><%=h asset.photo_file_name %></td>
+		<td><%=h asset.photo_content_type %></td>
+		<td class='right'><%=h number_with_precision(asset.photo_file_size / 1000.0, :precision => 1).to_s rescue nil %> Kb</td>
+		<td><%=h nice_date(asset.updated_at) rescue nil %></td>
+		<td><%=h nice_date(asset.photo_updated_at) rescue nil %></td>
+		<td class='thumb' id='images'>
+			<div id="clip_outer">
+				<div id="clip_inner">
+					<%= link_to image_tag(@image, :alt => @alt), @image_show %>
+				</div>
+			</div>
+
+		</td>
+	    <td><%= link_to '[Originaler]', asset %><%= link_to '[Ret]', edit_asset_path(asset) %><%= link_to '[Slet]', asset, :confirm => 'Er du sikker?', :method => :delete %></td>
+	  </tr>
+<% end %>
+</table>
+
+<div class='pagination_info'><%#= page_entries_info @assets %></div>
+<%= will_paginate @assets %>
+
+
+<% end %>
+<br />
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>
+
+
+<% content_for :javascript do %>
+
+  <% javascript_tag do %>
+
+     		TopUp.addPresets({
+			  "#images a": {
+			    group: "images",
+				title: "{alt} {current} af {total}",
+			    layout: "dashboard",
+			    modal: 1,
+			    resizable: 0,
+			    readAltText: 1,
+				shaded: 1,
+				effect: 'switch'
+				    },
+			  ".shaded": {
+			    shaded: 1
+			  }
+			});
+
+
+    <% end %>
+
+<% end %>

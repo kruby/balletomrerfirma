@@ -1,0 +1,39 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+
+<h1>
+Aktivitetsliste
+<%= link_to '[Ny aktivitet]', new_activity_path %>
+</h1>
+
+<table id='zebra_stripes'>
+  <tr>
+    <th>Akt.</th>
+    <th>Overskrift</th>
+    <th>Beskrivelse</th>
+    <th>Start</th>
+	<th>Slut</th>
+	<th>Handling</th>
+  </tr>
+
+<% @activities.each do |activity| %>
+  <tr>
+    <td><%=link_to active_test(activity.active), :action => 'active', :id => activity.id%><%#=h activity.active %></td>
+    <td><%=h activity.title %></td>
+    <td><%=h activity.description %></td>
+    <td><%=h nice_date(activity.start_date) rescue nil %></td>
+	<td><%=h nice_date(activity.end_date) rescue nil %></td>
+    <td>
+		<%= link_to '[Vis]', activity %>
+		<%= link_to '[Ret]', edit_activity_path(activity) %>
+    	<%= link_to '[Slet]', activity, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

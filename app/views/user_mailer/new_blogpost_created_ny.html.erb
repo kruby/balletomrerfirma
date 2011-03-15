@@ -1,0 +1,15 @@
+Hej alle,<br/><br/>
+
+<b>BLOGMAIL</b><br/><br/>
+
+
+<b><%= @post.title rescue nil %></b><br/>
+<%= textilize(@post.body) rescue nil %><br/><br/>
+
+Skrevet af: <%= @user.blogname rescue nil %><br/><br/>
+
+Link til blogposten: http://www.sundmedkost.dk/posts/<%= @post.id %><br/><br/>
+------------------------------------------------------------------------
+
+
+

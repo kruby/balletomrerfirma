@@ -1,0 +1,46 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+	
+<h1>Liste over indlæg <%= link_to '[Nyt indlæg]', new_post_path %></h1>
+
+<% form_for @search do |f| %>
+<p id="search_form">
+	Titel <%= f.text_field :title_like, :size => 15, :class => 'search_field' %>
+	Indhold <%= f.text_field :body_like, :size => 15, :class => 'search_field'  %>
+	Forfatter <%= f.text_field :author, :size => 5, :class => 'search_field'  %>
+	<%= f.submit "[Søg]", :name => nil, :class => 'button'  %>
+	<%= link_to '[Find alle]', posts_path %>
+</p>
+
+<% end %>
+
+<table id='zebra_stripes'>
+  <tr>
+	<th class='pos'>ID</th>
+    <th>Aktiv</th>
+	<th>Titel</th>
+    <th>Indhold</th>
+    <th>Forfat.</th>
+	<th class='pos'> Opret.</th>
+	<th>Handling</th>
+  </tr>
+
+<% for post in @posts %>
+  <tr>
+	<td class='pos'><%=h post.id %></td>
+	<td class='pos'><%=link_to active_test(post.active), :action => 'active', :id => post.id%></td>
+    <td><%=h post.title %></td>
+    <td><%=h truncate(post.body, :length => 60) %></td>
+    <td class="pos"><%=h User.find(post.user_id).blogname rescue nil %></td>
+	<td class="pos"><%=h nice_date(post.created_at) %></td>
+    <td><%= link_to '[Ret]', edit_post_path(post) %><%= link_to '[Slet]', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<div class='pagination_info'><%#= page_entries_info @posts %></div>
+<%= will_paginate @posts %>
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

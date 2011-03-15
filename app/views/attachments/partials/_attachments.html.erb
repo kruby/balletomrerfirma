@@ -1,0 +1,37 @@
+<div id="attachments">
+	
+
+
+	<div id="receive_images">
+
+		<% for attachment in @attachable.attachments.find(:all, :order => 'asset_id') %>
+		
+			<% @image = Asset.find(attachment.asset_id).photo.url(:image_50) rescue nil%>
+			
+			<%= image_tag(@image, :alt => attachment.description, :title => attachment.description) %>
+		
+		<% end %>
+	
+	</div>
+		
+	
+	<h2>Tilgængelige fotos</h2>
+	<p id="dragging">(Træk fotos fra det blå til grønne område for at hæfte dem på indlægget!)</p>
+	
+	<div id="draggable_images">
+
+	<% for asset in @assets %>
+
+		<% @image = asset.photo.url(:image_50) %>
+		<%= image_tag(@image, :alt => @alt, :id => asset.id, :class => 'draggable', :title => asset.description) %>
+				
+	<% end %>
+
+	<div class='pagination_info'><%= page_entries_info @assets %></div>
+	<%= will_paginate @assets %>
+
+
+	</div>
+
+
+</div>

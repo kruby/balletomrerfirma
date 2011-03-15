@@ -1,0 +1,364 @@
+/*STYLES TIL ADMINISTRATIONS SIDERNE (LISTER)*/
+
+
+#admin_liste #receive_images {
+	position: relative;
+	background-color:#D4E6CD;
+	border:1px solid #FFFFFF;
+	min-height: 125px;
+	height: auto;
+	overflow: auto;
+	width: 390px;
+	min-width: 350px;
+	padding: 10px 10px 15px 10px;
+	text-align:center;
+}
+
+#admin_liste #receive_images.post {
+	min-width: 490px;
+}
+
+#admin_liste #receive_images img, #admin_liste #draggable_images img {
+	border:1px solid #D4E6CD;
+	margin:5px 5px 0;
+}
+
+#admin_liste #receive_images ul#sortable_attachments {
+	display:block;
+	margin:auto;
+	padding:0;
+	width:auto;
+}
+
+#admin_liste #receive_images ul#sortable_attachments li {
+	background-color:#D4E6CD;
+	border:0 none;
+	margin:5px;
+	padding:0;
+	float:left;
+	list-style: none;
+	height: auto;
+}
+
+#admin_liste #sortable_attachments_menus {
+	background-color:#D4E6CD;
+	margin:0;
+	padding:0;
+	width: 75px;
+}
+
+#admin_liste #sortable_attachments_menus a {
+	background-color:#D4E6CD;
+	float: left;
+	margin:0;
+	border: none;
+}
+
+#admin_liste #draggable_images {
+	background-color:#C6DBE9;
+	border:1px solid #FFFFFF;
+	margin-right:0;
+	height: auto;
+	width:490px;
+	min-width:350px;
+	padding: 10px 10px 10px 10px;
+	text-align:center;
+}
+
+
+#popup_vinduer a {
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#333;
+	margin-right:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+
+#admin_liste td{
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	vertical-align:top;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #999;
+	background-color: #fff;
+	padding: 3px;
+}
+
+#admin_liste th{
+	font-size:11px;
+	padding: 4px;
+	background-color: #fff;
+	border-bottom: 1px solid #999;
+	font-weight:bold;
+	text-align:left;
+	color:#888;
+	border-left: 1px solid #999;
+}
+
+
+#admin_liste {
+z-index:100;
+position:absolute;
+top: 170px;
+left: 150px;
+color:#000000;
+}
+
+#admin_liste .sort_after_text a{
+color:#991614;
+} 
+
+
+#admin_formular #admin_liste {
+z-index:0;
+position:relative;
+top: 5px;
+left: 0px;
+color:#000000;
+}
+
+#admin_liste p{
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#888;
+	margin-top:10px;
+}
+#admin_liste h1 {
+	font-size:20px;
+	font-weight:bold;
+	text-align:left;
+	color:#888;
+	margin-left: 0px;
+}
+#admin_liste h2 {
+	font-size:16px;
+	font-weight:bold;
+	text-align:left;
+	color:#888;
+	margin-left: 0px;
+	margin-bottom: 8px;
+}
+
+#admin_liste a {
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#888;
+	margin-right:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+
+#admin_liste #attachments_links {
+	margin-bottom: 5px;
+}
+
+#admin_liste td a {
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	color:#333;
+	margin-right:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+
+#admin_liste td.thumb {
+	color:#FFFFFF;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	text-align: center;
+}
+
+#admin_liste td.thumb a  {
+	color:#FFFFFF;
+	position: relative;
+	top: 2px;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	text-align: center;
+}
+
+#top_up td, table #tu_centered_content {
+	border: 0px;
+	border-collapse:collapse;
+}
+
+#admin_liste .brd1{
+	font-size:12px;
+	font-weight:normal;
+	text-align:left;
+	color:#000000;
+	margin-top:2px;
+	margin-left:3px;
+}
+.pos, #admin_liste .pos {
+	text-align: center;
+}
+
+.pos, #admin_liste .right {
+	text-align: right;
+}
+
+.pos, #admin_liste .center {
+	text-align: center;
+}
+
+#admin_liste .dato{
+	text-align: center;
+	padding: 4px 10px 0px 10px;
+}
+#admin_liste .ov{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bolder;
+	text-align:left;
+	color:#000000;
+	margin-top:10px;
+	margin-left:3px;
+}
+
+#admin_liste .button{
+	width: auto;
+	font-size:11px;
+	font-weight:normal;
+	text-align:center;
+	color:#888;
+	border: none;
+	cursor: pointer;
+	background-color: #FFF;
+	padding: 0px;
+}
+
+#admin_liste #search_form input.search_field {
+	margin-right: 10px;
+}
+
+#admin_liste input.felter{
+	font-size:12px;
+	padding: 1px;
+	border-width: 1px;
+	background-color: #fff;
+	font-weight:normal;
+	text-align:left;
+	color:#888;
+	display: block;
+}
+
+#admin_liste input.center{
+	font-size:12px;
+	padding: 1px;
+	border-width: 1px;
+	background-color: #fff;
+	font-weight:normal;
+	text-align:center;
+	color:#888;
+	display: block;
+}
+
+#admin_liste input.day_field, #admin_liste input.month_field, #admin_liste input.year_field{
+	font-size:12px;
+	padding: 1px;
+	border-width: 1px;
+	background-color: #fff;
+	font-weight:normal;
+	text-align:center;
+	color:#888;
+}
+
+#admin_liste td {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+
+#admin_liste .pagination_info, #admin_blog .pagination_info {
+font-size:10px;
+line-height:10px;
+font-weight:normal;
+text-align:center;
+margin-left:0px;
+margin-top:0px;
+color:#888;
+}
+
+#admin_liste .pagination, #admin_blog .pagination {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-top:15px;
+color:black;
+}
+
+#admin_liste .pagination a:link, #admin_blog .pagination a:link {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+color:#CC0000;
+}
+
+#admin_liste .pagination a:hover, #admin_blog .pagination a:hover {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+text-decoration: underline;
+color:#CC0000;
+}
+
+#admin_liste .pagination a:visited, #admin_blog .pagination a:visited {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+color:#CC0000;
+}
+
+#admin_liste .pagination a:active, #admin_blog .pagination a:active {
+font-size:10px;
+font-weight:bold;
+text-align:center;
+margin-left:0px;
+margin-right: 0px;
+margin-top:0px;
+color:#CC0000;
+}
+
+#admin_liste tr.zebra td {
+	background-color: #D4E6CD;
+}
+
+#admin_liste #clip_outer{
+	position:relative;
+	width:38px;
+	height:38px;
+/*	float: left;*/
+/*	margin-right: 5px;*/
+/*	border: 1px solid #999;
+	background-color: #FFF;*/
+}
+#admin_liste #clip_inner{
+	position:absolute;
+	clip:rect(20px 58px 58px 20px);
+	top:-20px;
+	left:-20px;
+}
+
+
+/*HERTIL STYLES TIL ADMINISTRATIONS SIDERNE (LISTER)*/

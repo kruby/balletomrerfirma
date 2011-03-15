@@ -1,0 +1,25 @@
+<ul>
+		
+<% @menu_count_start = (Content.main_menu.count / 2).round %>
+<% @menu_count_end = Content.main_menu.count - 1 %>	
+
+	
+<% @main_menu_left = Content.main_menu[@menu_count_start..@menu_count_end] %>
+
+<% @main_menu_left.each do |menu| -%>
+		
+		<% if menu.redirect? %>
+			<li class="line_right">
+				<%= link_to menu.navlabel.mb_chars.upcase, :controller => menu.controller_redirect, :action => menu.action_redirect, :id => menu.resource_id %>
+			</li>
+			
+		<% else %>
+			<li class="line_right">
+				<%= link_to menu.navlabel.mb_chars.upcase, :controller => menu.controller_name %>
+			</li>
+		<% end %>
+		
+	
+<% end %>
+
+</ul>

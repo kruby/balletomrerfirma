@@ -1,0 +1,51 @@
+	<div id="bg">
+		<div>
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td>
+						<img src="images/background.jpg" alt=""/>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="wrapper">
+		<div id="top_wrapper">
+			<div id="top_outer">
+				<div id="top_text_left_wrapper">
+					<div id="top_text_left_upper">
+						Morten Madsen
+					</div>
+					<div id="top_text_left_lower">
+						Silkeborg Golf Club, Danmark
+					</div>
+				</div>
+				
+
+				
+				<div id="top_logo">
+					<img src="images/logo.gif" alt=""/>
+				</div>
+				<div id="top_text_right_wrapper">
+					<div id="top_text_right_upper">
+						Aktuelt opholdssted
+					</div>
+					<div id="top_text_right_lower">
+						<%= @whereabouts %>
+					</div>
+				</div>
+			</div>
+		</div>
+			
+		<div id="access_wrapper">
+			<div id="access_outer">
+				<% if @access == 'Åben' %>
+					<a href="/blog" class="menu">[ ADGANG ]</a>
+				<% else %>
+					<a href="/" class="menu">-- SIDEN ER UNDER OPDATERING --</a>
+				<% end %>
+			</div>
+		</div>
+
+	</div>

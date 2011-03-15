@@ -1,0 +1,43 @@
+<%#= render :partial => "layouts/menu" %>
+	
+<h1>Bloggen i listeform <%= link_to '[Nyt indlæg]', new_post_path %> <%= link_to '[Blog]',bloggen_path %></h1>
+
+<% form_for @search do |f| %>
+<p id="search_form">
+	Titel <%= f.text_field :title_like, :size => 15, :class => 'search_field' %>
+	Indhold <%= f.text_field :body_like, :size => 15, :class => 'search_field'  %>
+	Forfatter <%= f.text_field :author, :size => 5, :class => 'search_field'  %>
+	<%= f.submit "[Søg]", :name => nil, :class => 'button'  %>
+	<%= link_to '[Find alle]', miniblog_path %>
+</p>
+
+<% end %>
+
+<div id="mini_blog">
+<table id='zebra_stripes'>
+  <tr>
+    <th class='left'>Titel</th>
+    <th class='left'>Indhold</th>
+    <th class='sortering'><%= link_to 'Forf.', :action => 'sorter_forfatter' %></th>
+	<th class='sortering'><%= link_to 'Dato', :action => 'sorter_dato' %></th>
+	<th>Komm.<%#= link_to 'Komm.', :action => 'sorter_kommentar' %></th>
+
+    <!-- <th>Prio.</th> -->
+	<!-- <th class='left'>Handling</th> -->
+  </tr>
+
+<% for post in @posts %>
+<% @comments = Post.find(post.id).children.count %>
+  <tr class='<%= cycle("even", "odd") -%>'>
+    <td id='r1'><%= link_to post.title, post, :id => post.id %></td>
+    <td id='r2'><%=h truncate(post.body, :length => 45) %></td>
+    <td class="pos" id='r3'><%=h User.find(post.user_id).blogname %></td>
+	<td id='r4'><%=h nice_date(post.created_at) %></td>
+	<td class="pos"><%=  @comments unless @comments < 1 %></td>
+    
+    <!-- <td class='pos'> --><%#= link_to '[Læs]', post, :id => post.id %><%#= link_to '[Slet]', post, :confirm => 'Are you sure?', :method => :delete %><!-- </td> -->
+  </tr>
+<% end %>
+</table>
+
+</div>

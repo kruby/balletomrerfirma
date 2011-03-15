@@ -1,0 +1,22 @@
+<table>
+  <tr>
+	<!-- <th>ID</th> -->
+    <th>Bruger</th>
+    <th width='245'>Beskrivelse</th>
+    <th>Ant.</th>
+    <th class='pos'>Dato</th>
+	<th>Handling</th>
+  </tr>
+
+  <tr>
+	<% form_for(@assetable) do |f| %>
+    <td class='pos'><%= User.find(@assetable.user_id).blogname rescue nil %><%= f.hidden_field(:user_id, :value => current_user.id) %>
+	</td>
+    <td><%= f.text_field :description, :size => '30', :class => 'felter' %></td>
+    <td><%= f.text_field :number, :size => '3', :class => 'center'%></td>
+    <td><%= f.date_text_field :date, :order => [:day, :month, :year ] %></td>
+    <td><%= f.submit "[Opdater]", :class => 'button' %><%#= link_to '[Tilbage]', hours_path %></td>
+	<% end %>  
+</tr>
+
+</table >

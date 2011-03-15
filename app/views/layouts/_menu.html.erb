@@ -1,0 +1,15 @@
+<div class="top_foto"><%= image_tag "top_adm.jpg" %></div>
+<div id="menu_top">
+	<% @status = Parameter.find_by_name('Adgang').value rescue nil %>
+	<% if flash[:notice] -%>
+	<div class="status_info">Status: [ <%= link_to @status, :controller => 'parameters', :action => 'open_close', :id => @status  %> ]</div> 
+	<span class="flash_menu"><%= '[' + flash[:notice] + ']' %></span>
+	<span class="time_stamp"><%= nice_timestamp_update(Time.now) %></span>
+	<% else %>
+	<div class="status_info">Status: [ <%= link_to @status, :controller => 'parameters', :action => 'open_close', :id => @status %> ]</div>
+	<div class="rub_top">Administrationsområde</div>
+	<% end -%>
+
+</div>
+
+<%= render :partial => "menusystem/menu_level_0" %>

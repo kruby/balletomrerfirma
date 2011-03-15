@@ -1,0 +1,27 @@
+<div id="wrapper">
+
+	<%= render :partial => "viewer/partials/viewer_top" %>
+
+	<div id="content_wrapper">	
+
+		<div id="content_outer_extra">
+
+			<div id="content_outer_simple">
+				
+			
+				<%= will_paginate @posts %>
+
+					<%= render :partial => "events/partials/eventslist" %>
+				
+				<%= will_paginate @posts %>
+				
+			</div>
+
+
+		</div>
+
+	</div>
+
+</div>
+
+

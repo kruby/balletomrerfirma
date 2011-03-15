@@ -1,0 +1,22 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+<% form_for(@parameter) do |f| %>
+  <%= f.error_messages %>
+
+<h1>
+Ny parameter
+<%= link_to '[Tilbage]', parameters_path %><%= f.submit '[Opret]', :class => 'button' %>
+</h1>
+
+  <p>
+    <%= f.label :navn %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :værdi %><br />
+    <%= f.text_field :value %>
+  </p>
+
+<% end %>
+

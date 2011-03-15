@@ -1,0 +1,79 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+<% form_for(@relation) do |f| %>
+
+<h1>Ny relation
+	<%= f.submit "[Opret]", :class => 'button'%>
+	<%= link_to '[Tilbage]', relations_path %>
+</h1>
+
+<%= error_messages_for :relation %>
+<div id="left">
+	<div class="dropdowns">
+		<p class="drop_down_1">
+			<b>Kategori</b><br />
+			<%= f.select (:category, [	
+				['Firmakunde', 'Firmakunde'],
+				['Privatkunde', 'Privatkunde'], 
+				['Emne', 'Emne'],
+				['Leverandør', 'Leverandør'],
+				['X-kunde', 'X-kunde']
+				], { :include_blank => true}) %>
+		</p>
+			<!-- <p class="drop_down_2">
+				<b>Ansvarlig</b><br />
+				<%#= f.select ( :responsible, ['ALLE'] + User.active_users.collect { |p| [ p.blogname, p.blogname ] }, :include_blank => true ) %>
+			</p> -->
+		</div>
+		<div class="date_and_time">
+			<p class="date">
+				<b>Næste kontakt</b><br />
+				<%#= date_text_field :relation, :next_action, :blank => true, :order => [:day, :month, :year ] %>
+				<%= f.datetime_text_field :next_action, :blank => true, :order => [:day, :month, :year ] %>
+			</p>
+
+			<br />
+		</div>
+		<div class="text_fields">
+			<p>
+				<b>Kundenavn</b><br />
+				<%= f.text_field :company, :size => 50 %>
+			</p>
+
+			<p>
+				<b>Adresse</b><br />
+				<%= f.text_field :address, :size => 50 %>
+			</p>
+
+			<p>
+				<b>Postnr./By</b><br />
+				<%= f.text_field :postno, :size => 5 %> <%= f.text_field :city, :size => 41 %>
+			</p>
+			
+			<p>
+				<b>Kontakt information</b><br />
+				<%= f.text_area :contact_info %>
+			</p>
+			
+		</div>
+</div>
+
+<div id="right">
+	
+
+
+			<p>
+				<b>Log</b><br />
+				<%= f.text_area :log %>
+			</p>
+
+
+</div>
+
+	<% end %>
+
+</div>
+
+
+</div>

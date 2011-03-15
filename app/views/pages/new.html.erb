@@ -1,0 +1,33 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+<h1>Oprettelse af ny statisk side</h1>
+
+<%= error_messages_for :page %>
+
+<% form_for(@page) do |f| %>
+
+<p>
+    <b>Aktiv</b>
+	<%= f.check_box :active %>
+	<!-- <span class='brd1'><%#= active %></span> --> <!-- Kommer fra application_helper.rb -->
+	<br />  
+  </p>
+<p>
+    <b>Navn</b><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <b>Titel</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <b>Indhold</b><br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit "[Opret]", :class => 'button'%>
+	<%= link_to '[Tilbage]', pages_path %>
+  </p>
+<% end %>
+</div>

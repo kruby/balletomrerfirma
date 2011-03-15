@@ -1,0 +1,287 @@
+/* FONT FARVER */
+
+#redcloth p.black {
+	color: #000000;
+}
+
+#redcloth p.blue {
+	color: #126773;
+}
+
+#redcloth p.lightblue {
+	color: #9CBBC6;
+}
+
+#redcloth p.red {
+	color: #B6000A;
+}
+
+/* FONT SNIT */
+
+#redcloth p.bold {
+	font-weight: bold;
+}
+
+#redcloth p.normal {
+	font-weight: normal;
+}
+
+#redcloth p.italic {
+	font-style: italic;
+}
+
+/* FONT JUSTERING */
+
+#redcloth p.left {
+	text-align: left;
+}
+
+#redcloth p.right {
+	text-align: right;
+}
+
+#redcloth p.center {
+	text-align: center;
+}
+
+/* FONT STØRRELSER */
+#redcloth p.p6 {
+	font-size: 6px;
+	line-height: 8px;
+}
+#redcloth p.p8 {
+	font-size: 8px;
+	line-height: 10px;
+}
+#redcloth p.p10 {
+	font-size: 10px;
+	line-height: 12px;
+}
+#redcloth p.p12 {
+	font-size: 12px;
+	line-height: 14px;
+}
+#redcloth p.p14 {
+	font-size: 14px;
+	line-height: 18px;
+}
+#redcloth p.p16 {
+	font-size: 16px;
+	line-height: 20px;
+}
+#redcloth p.p18 {
+	font-size: 18px;
+	line-height: 22px;	
+}
+#redcloth p.p20 {
+	font-size: 20px;
+	line-height: 24px;	
+}
+#redcloth p.p22 {
+	font-size: 22px;
+	line-height: 26px;
+}
+#redcloth p.p24 {
+	font-size: 24px;
+	line-height: 28px;
+}
+#redcloth p.p26 {
+	font-size: 26px;
+	line-height: 30px;
+}
+#redcloth p.p28 {
+	font-size: 28px;
+	line-height: 32px;
+}
+#redcloth p.p30 {
+	font-size: 30px;
+	line-height: 36px;
+}
+#redcloth p.p32 {
+	font-size: 32px;
+	line-height: 38px;
+}
+#redcloth p.p34 {
+	font-size: 34px;
+	line-height: 40px;
+}
+#redcloth p.p36 {
+	font-size: 36px;
+	line-height: 42px;
+}
+#redcloth p.p38 {
+	font-size: 38px;
+	line-height: 44px;
+}
+#redcloth p.p40 {
+	font-size: 40px;
+	line-height: 48px;
+}
+#redcloth p.p42 {
+	font-size: 42px;
+	line-height: 50px;
+}
+#redcloth p.p44 {
+	font-size: 44px;
+	line-height: 52px;
+}
+#redcloth p.p46 {
+	font-size: 46px;
+	line-height: 54px;
+}
+#redcloth p.p48 {
+	font-size: 48px;
+	line-height: 56px;
+}
+#redcloth p.p50 {
+	font-size: 50px;
+	line-height: 60px;
+}
+
+/* IMAGE STYRING */
+
+#redcloth p.image_right { float: right; clear: right; margin: 0px; }
+
+#redcloth p.image_left { float: left; clear: left; margin: 0px; }
+
+#redcloth p.relative { position:relative; }
+#redcloth p.bottom { bottom: 0px; }
+#redcloth p.right { right: 0px; }
+#redcloth p.center { margin-right: auto; margin-left: auto;}
+
+#redcloth p.width95 img { width: 95%;}
+#redcloth p.width90 img { width: 90%;}
+#redcloth p.width85 img { width: 85%;}
+#redcloth p.width80 img { width: 80%;}
+#redcloth p.width75 img { width: 75%;}
+#redcloth p.width70 img { width: 70%;}
+#redcloth p.width65 img { width: 65%;}
+#redcloth p.width60 img { width: 60%;}
+#redcloth p.width55 img { width: 55%;}
+
+#redcloth p.width290 img { width: 295px;}
+#redcloth p.width295 img { width: 290px;}
+#redcloth p.width285 img { width: 285px;}
+#redcloth p.width280 img { width: 280px;}
+#redcloth p.width275 img { width: 275px;}
+#redcloth p.width270 img { width: 270px;}
+#redcloth p.width265 img { width: 265px;}
+#redcloth p.width260 img { width: 260px;}
+#redcloth p.width255 img { width: 255px;}
+#redcloth p.width250 img { width: 250px;}
+#redcloth p.width245 img { width: 245px;}
+#redcloth p.width240 img { width: 240px;}
+#redcloth p.width235 img { width: 235px;}
+#redcloth p.width230 img { width: 230px;}
+#redcloth p.width225 img { width: 225px;}
+#redcloth p.width220 img { width: 220px;}
+#redcloth p.width215 img { width: 215px;}
+#redcloth p.width210 img { width: 210px;}
+
+#redcloth p.top5 { margin-top: 5px;}
+#redcloth p.top10 { margin-top: 10px;}
+#redcloth p.top20 {	margin-top: 20px;}
+#redcloth p.top30 {	margin-top: 30px;}
+#redcloth p.top40 {	margin-top: 40px;}
+#redcloth p.top50 { margin-top: 50px;}
+#redcloth p.top60 { margin-top: 60px;}
+#redcloth p.top70 { margin-top: 70px;}
+#redcloth p.top80 { margin-top: 80px;}
+#redcloth p.top90 { margin-top: 90px;}
+#redcloth p.top100 { margin-top: 100px;}
+#redcloth p.top120 { margin-top: 120px;}
+#redcloth p.top140 { margin-top: 140px;}
+#redcloth p.top160 { margin-top: 160px;}
+#redcloth p.top180 { margin-top: 180px;}
+#redcloth p.top200 { margin-top: 200px;}
+#redcloth p.top220 { margin-top: 220px;}
+#redcloth p.top240 { margin-top: 240px;}
+#redcloth p.top260 { margin-top: 260px;}
+#redcloth p.top280 { margin-top: 280px;}
+#redcloth p.top300 { margin-top: 300px;}
+
+#redcloth p.right5 { margin-right: 5px;}
+#redcloth p.right10 { margin-right: 10px;}
+#redcloth p.right20 { margin-right: 20px;}
+#redcloth p.right30 { margin-right: 30px;}
+#redcloth p.right40 { margin-right: 40px;}
+#redcloth p.right50 { margin-right: 50px;}
+#redcloth p .right60 { margin-right: 60px;}
+#redcloth p.right70 { margin-right: 70px;}
+#redcloth p.right80 { margin-right: 80px;}
+#redcloth p.right90 { margin-right: 90px;}
+#redcloth p.right100 { margin-right: 100px;}
+#redcloth p.right120 { margin-right: 120px;}
+#redcloth p.right140 { margin-right: 140px;}
+#redcloth p.right160 { margin-right: 160px;}
+#redcloth p.right180 { margin-right: 180px;}
+#redcloth p.right200 { margin-right: 200px;}
+#redcloth p.right220 { margin-right: 220px;}
+#redcloth p.right240 { margin-right: 240px;}
+#redcloth p.right260 { margin-right: 260px;}
+#redcloth p.right280 { margin-right: 280px;}
+#redcloth p.right300 { margin-right: 300px;}
+
+#redcloth p.bottom5 { margin-bottom: 5px;}
+#redcloth p.bottom10 { margin-bottom: 10px;}
+#redcloth p.bottom20 { margin-bottom: 20px;}
+#redcloth p.bottom30 { margin-bottom: 30px;}
+#redcloth p.bottom40 { margin-bottom: 40px;}
+#redcloth p.bottom50 { margin-bottom: 50px;}
+#redcloth p.bottom60 { margin-bottom: 60px;}
+#redcloth p.bottom70 { margin-bottom: 70px;}
+#redcloth p.bottom80 { margin-bottom: 80px;}
+#redcloth p.bottom90 { margin-bottom: 90px;}
+#redcloth p.bottom100 { margin-bottom: 100px;}
+#redcloth p.bottom120 { margin-bottom: 120px;}
+#redcloth p.bottom140 { margin-bottom: 140px;}
+#redcloth p.bottom160 { margin-bottom: 160px;}
+#redcloth p.bottom180 { margin-bottom: 180px;}
+#redcloth p.bottom200 { margin-bottom: 200px;}
+#redcloth p.bottom220 { margin-bottom: 220px;}
+#redcloth p.bottom240 { margin-bottom: 240px;}
+#redcloth p.bottom260 { margin-bottom: 260px;}
+#redcloth p.bottom280 { margin-bottom: 280px;}
+#redcloth p.bottom300 { margin-bottom: 300px;}
+
+#redcloth p.left5 { margin-left: 5px;}
+#redcloth p.left10 { margin-left: 10px;}
+#redcloth p.left20 { margin-left: 20px;}
+#redcloth p.left30 { margin-left: 30px;}
+#redcloth p.left40 { margin-left: 40px;}
+#redcloth p.left50 { margin-left: 50px;}
+#redcloth p.left60 { margin-left: 60px;}
+#redcloth p.left70 { margin-left: 70px;}
+#redcloth p.left80 { margin-left: 80px;}
+#redcloth p.left90 { margin-left: 90px;}
+#redcloth p.left100 { margin-left: 100px;}
+#redcloth p.left120 { margin-left: 120px;}
+#redcloth p.left140 { margin-left: 140px;}
+#redcloth p.left160 { margin-left: 160px;}
+#redcloth p.left180 { margin-left: 180px;}
+#redcloth p.left200 { margin-left: 200px;}
+#redcloth p.left220 { margin-left: 220px;}
+#redcloth p.left240 { margin-left: 240px;}
+#redcloth p.left260 { margin-left: 260px;}
+#redcloth p.left280 { margin-left: 280px;}
+#redcloth p.left300 { margin-left: 300px;}
+
+#redcloth p.border { border: 1px solid #999; }
+#redcloth p.border-top { border-top: 1px solid #999; }
+
+#redcloth ul, #redcloth ol, #content_right div.recipes ul, #content_right div.recipes ol {
+	list-style-type: disc;
+	font-size: 11px;
+	margin-left: 40px;
+	font-style: normal;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+#redcloth ul li, #content_right div.recipes ul li {
+	margin-top: 4px;
+}
+
+#redcloth br {
+	margin-bottom: 5px;
+}

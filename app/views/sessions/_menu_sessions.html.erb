@@ -1,0 +1,16 @@
+<!-- <img class="top_foto" src="images/top.jpg" /> -->
+<div class="top_foto"><%#= image_tag "top.jpg" %></div>
+<div id="menu_top">
+<div class="rub_top">ADMINISTRATOR ADGANG 
+	<span class="flash">
+	<% if flash[:notice] -%> 
+	<%= '[' + flash[:notice] + ']' %>
+	<% end -%>
+	</span> 	
+	</div>
+</div>
+<div id="menu_left">
+<ul id="nav">
+<li><%= link_to 'Forside', root_path %></li>
+<li id="box_left"></li> 
+</ul></div>

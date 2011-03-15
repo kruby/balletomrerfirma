@@ -1,0 +1,13 @@
+<p>
+  <b>Navn:</b>
+  <%=h @parameter.name %>
+</p>
+
+<p>
+  <b>Værdi:</b>
+  <%=h @parameter.value %>
+</p>
+
+
+<%= link_to '[Ret]', edit_parameter_path(@parameter) %> |
+<%= link_to '[Tilbage]', parameters_path %>

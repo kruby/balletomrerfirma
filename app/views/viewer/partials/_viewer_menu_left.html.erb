@@ -1,0 +1,35 @@
+<%#Her skal jeg finde menupunkterne til hovedmenuen i Contents. Dvs. alle dem der tilhører Controlleren pages og som er aktive. Menuerne dannes herfra, men det efterfølgende indhold hentes i Pages eller anden tabel.%>
+
+<!-- <ul>
+	
+	<li class='line_right'><a href="index.html" class="menu">INFO</a></li>
+	<li class='line_right'><a href="index.html" class="menu">SPONSORER</a></li>
+</ul> -->
+
+<ul>
+	
+	<!-- <li class='line_right'><a href="/forside" class="menu">FORSIDE</a></li> -->
+	
+<% @menu_count = (Content.main_menu.count / 2).round - 1 %>
+	
+<% @main_menu_left = Content.main_menu[0..@menu_count] %>
+
+<% @main_menu_left.each do |menu| -%>
+		
+		<% if menu.redirect? %>
+			<li class="line_right">
+				<%= link_to menu.navlabel.mb_chars.upcase, :controller => menu.controller_redirect, :action => menu.action_redirect, :id => menu.resource_id %>
+			</li>
+			
+		<% else %>
+			<li class="line_right">
+				<%= link_to menu.navlabel.mb_chars.upcase, :controller => menu.controller_name %>
+			</li>
+		<% end %>
+		
+	
+<% end %>
+
+</ul>
+
+

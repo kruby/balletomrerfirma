@@ -1,0 +1,34 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+<% form_for(@list) do |f| %>
+  <%= f.error_messages %>
+
+<h1>
+	Editing list
+	<%#= link_to '[Vis]', @list %> |
+	<%= link_to '[Tilbage]', lists_path %>
+	<%= f.submit '[Opdater]', :class => 'button' %>
+</h1>
+
+
+  <p>
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :model_name %><br />
+    <%= f.text_field :model_name %>
+  </p>
+
+<% end %>
+
+</div>

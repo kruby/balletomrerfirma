@@ -1,0 +1,33 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>
+	Listing lists
+	<%= link_to '[Ny liste]', new_list_path %>
+	
+</h1>
+
+<table id='zebra_stripes' >
+  <tr>
+    <th>Aktiv</th>
+    <th>Navn</th>
+    <th>Beskrivelse</th>
+    <th>Tilhører</th>
+  </tr>
+
+<% @lists.each do |list| %>
+  <tr>
+    <td><%=h list.active %></td>
+    <td><%=h list.name %></td>
+    <td><%=h list.description %></td>
+    <td><%=h list.model_name %></td>
+    <td><%#= link_to '[Vis]', list %>
+		<%= link_to '[Ret]', edit_list_path(list) %>
+		<%= link_to '[Slet]', list, :confirm => 'Er du sikker?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

@@ -1,0 +1,23 @@
+<% @tabs_main.each do |level_1| -%> <!-- @tabs kommer fra application.rb -->
+
+		<li class="user_navlabel">
+			
+			<% if level_1.redirect? %>
+			
+					<%= link_to level_1.navlabel, {:controller => level_1.controller_redirect, :action => level_1.action_redirect, :id => level_1.resource_id} %>
+			
+			<% else %>
+				
+			
+					<%= link_to level_1.navlabel, {:controller => level_1.controller_name} %> <!-- Alle admin sider ledes videre til deres index i views -->
+		    
+			
+			<% end %>
+		
+		<% @level_2_main = level_1.children %>
+		
+		<%= render :partial => "menusystem/menu_main_level_2" %>
+		
+<% end -%>
+
+

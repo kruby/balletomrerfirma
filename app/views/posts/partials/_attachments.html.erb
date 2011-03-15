@@ -1,0 +1,37 @@
+<div id="admin_liste">
+<h2>Tilhørende fotos <%= link_to '[Tilføj fotos]', add_to_post_path (:id => params[:id] )%></h2>
+<table>
+  <tr>
+    <th>Foto</th>
+	<th>Type</th>
+    <th>Description</th>
+    <th>Post ID</th>
+	<th></th>
+  </tr>
+
+<% for attachment in @attachments %>
+
+<% @image = Asset.find(attachment.asset_id).photo.url(:thumb) rescue nil%>
+<% @image_original = Asset.find(attachment.asset_id).photo.url(:original) rescue nil%>
+<% @description = Asset.find(attachment.asset_id).description %>
+
+  <tr>
+    <td class='thumb' id='images'>
+	<%#= link_to image_tag(@image), Asset.find(attachment.asset_id), :toptions => "shaded = 0, overlayClose = 0,  resizable = 0, group = 'images'" %>
+	<%#= link_to image_tag(@image), Asset.find(attachment.asset_id), :class => 'shaded' %>
+	<%= link_to image_tag(@image, :alt => @description), Asset.find(attachment.asset_id) %>
+	</td>
+	<td><%=h attachment.attachable_type %></td>
+    <td><%=h @description %></td>
+    <td class='pos'><%=h attachment.attachable_id %></td>
+    <td><%#= link_to '[Vis]', attachment %>
+		<%#= link_to '[Ret]', edit_attachment_path(attachment) %>
+		<%#= link_to '[Slet]', destroy_from_post_attachments_path(:post_id => params[:id], :id => attachment.id), :confirm => 'Er du sikker?', :method => :delete %>
+		<%= link_to '[Slet]', destroy_from_post_attachments_path(:post_id => params[:id], :id => attachment.id), :method => :delete %></td>
+  </tr>
+
+<% end %>
+
+</table>
+
+</div>

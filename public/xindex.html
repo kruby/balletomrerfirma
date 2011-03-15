@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+	<title>Morten Madsen - Silkeborg Golf Club</title>
+	<link type="text/css" rel="stylesheet" media="screen" href="stylesheets/kruby_viewer.css">
+	<link type="text/css" rel="stylesheet" media="screen" href="stylesheets/kruby_background.css">
+	<link type="text/css" rel="stylesheet" media="screen" href="stylesheets/kruby_index.css">
+	
+</head>
+
+<body>
+	
+	<div id="bg">
+		<div>
+			<table cellspacing="0" cellpadding="0">
+				<tr>
+					<td>
+						<img src="images/background.jpg" alt=""/>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="wrapper">
+		<div id="top_wrapper">
+			<div id="top_outer">
+				<div id="top_text_left_wrapper">
+					<div id="top_text_left_upper">
+						Morten Madsen
+					</div>
+					<div id="top_text_left_lower">
+						Silkeborg Golf Club, Danmark
+					</div>
+					<!-- <div id="menus_left">
+						<ul>
+							<li class='line_right'><a href="index.html" class="menu">FORSIDE</a></li>
+							<li class='line_right'><a href="index.html" class="menu">INFO</a></li>
+							<li class='line_right'><a href="index.html" class="menu">SPONSORER</a></li>
+						</ul>
+					</div> -->
+				</div>
+				
+
+				
+				<div id="top_logo">
+					<img src="images/logo.gif" alt=""/>
+				</div>
+				<div id="top_text_right_wrapper">
+					<div id="top_text_right_upper">
+						Aktuelt opholdssted
+					</div>
+					<div id="top_text_right_lower">
+						Silkeborg, Danmark
+					</div>
+					<!-- <div id="menus_right">
+											<ul>
+												<li class='line_right'><a href="index.html" class="menu">RESULTATER</a></li>
+												<li class='line_right'><a href="index.html" class="menu">KONTAKT</a></li>
+											</ul>
+										</div> -->
+				</div>
+			</div>
+		</div>
+			
+		<div id="access_wrapper">
+			<div id="access_outer">
+				<% if Parameter.find_by_name('Adgang').value == 'Åben' %>
+					<a href="/blog" class="menu">[ ADGANG ]</a>
+				<% end %>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

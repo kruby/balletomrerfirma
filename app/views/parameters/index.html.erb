@@ -1,0 +1,32 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+
+<h1>
+Parametre
+<%= link_to '[Ny parameter]', new_parameter_path %>
+</h1>
+
+<table id='zebra_stripes'>
+  <tr>
+    <th>Navn</th>
+    <th>Værdi</th>
+	<th>Handling</th>
+  </tr>
+
+<% @parameters.each do |parameter| %>
+  <tr>
+    <td><%=h parameter.name %></td>
+    <td><%=h parameter.value %></td>
+    <td>
+		<%= link_to '[Vis]', parameter %>
+   		<%= link_to '[Ret]', edit_parameter_path(parameter) %>
+    	<%= link_to '[Slet]', parameter, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

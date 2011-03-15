@@ -1,0 +1,49 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+<p>
+  <b>Company:</b>
+  <%=h @relation.company %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @relation.address %>
+</p>
+
+<p>
+  <b>Postno:</b>
+  <%=h @relation.postno %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @relation.city %>
+</p>
+
+<p>
+  <b>Telefon:</b>
+  <%=h @relation.contact_info %>
+</p>
+
+<p>
+  <b>Log:</b>
+  <%=h @relation.log %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @relation.category %>
+</p>
+
+<p>
+  <b>Responsible:</b>
+  <%=h @relation.responsible %>
+</p>
+
+
+<%= link_to '[Ret]', edit_relation_path(@relation) %> |
+<%= link_to '[Tilbage]', relations_path %>
+
+
+</div>

@@ -1,0 +1,32 @@
+<div id="attachments_links">
+	<% @page %>
+	<%= link_to '[Tilbage]', edit_post_path(params[:post_id]) %>
+	<%= link_to '[Opdater]', post_attachments_path(params[:post_id], :page => params[:page]) %><br>
+	<%#= link_to '[Update]', :controller => 'posts', :action => 'index', :id => params[:post_id], :page => params[:page] %>
+</div>
+
+<%= render :partial => '/attachments/partials/attachments'%>
+
+
+<% content_for :javascript do %>
+
+  <% javascript_tag do %>
+
+     		$('.draggable').draggable();
+		    $("#receive_images").droppable({
+		      drop: function(event, ui){
+			        $.ajax({
+		              type: 'post', 
+		              data: 'id=' + $(ui.draggable).attr('id') + '&post_id=<%=@attachable.id-%>', 
+		              dataType: 'script',
+		              url: '/attachments/create'})
+		            }
+		    });
+		
+
+
+
+    <% end %>
+
+<% end %>
+

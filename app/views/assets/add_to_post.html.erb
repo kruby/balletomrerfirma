@@ -1,0 +1,53 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<% form_tag edit_multiple_assets_path do %>
+<h1>Tilføj fotos til artikel nr. <%= params[:id] %> <%= '"' + Post.find(params[:id]).title + '"' %> <%= submit_tag "[Tilføj fotos]", :class => 'button' %> <%= link_to '[Tilbage]', edit_post_path(params[:id]) %></h1>
+
+
+<%= hidden_field_tag :post_id, h(params[:id]) %>
+
+<table>
+  <tr>
+	<th></th>
+	<th>Foto</th>
+	<th>Beskrivelse</th>
+	<!-- <th class="pos">ID</th>
+		<th>Filnavn</th>
+		<th class='pos'>Type</th>
+		<th class='pos'>Mb</th> -->
+	<th class='pos'>Tekst</th>
+	<th class='pos'>Foto</th>
+	
+  </tr>
+
+<% for asset in @assets %>
+<% @image =  asset.photo.url(:thumb) %>
+<% @topoptions = "shaded = 0, overlayClose = 0, resizable = 0, title = " + asset.description %>
+
+  <tr>
+	<td><%= check_box_tag "asset_ids[]", asset.id %></td>
+	<td class='thumb'>
+	<%= link_to image_tag(@image), asset, :toptions => @topoptions %>
+	</td>	
+	<td><%=h asset.description %></td>
+	<!-- <td><%#=h User.find(asset.user_id).blogname %></td>
+		<td><%#=h asset.photo_file_name %></td>
+		<td><%#=h asset.photo_content_type %></td>
+		<td><%#=h number_with_precision(asset.photo_file_size / 1000000.0, 2) rescue nil %></td> -->
+	<td><%=h nice_date(asset.updated_at) rescue nil %></td>
+	<td><%=h nice_date(asset.photo_updated_at) rescue nil %></td>
+	
+    <!-- <td><%#= link_to 'Show', asset %><%#= link_to '[Ret]', edit_asset_path(asset) %><%#= link_to '[Slet]', asset, :confirm => 'Are you sure?', :method => :delete %></td> -->
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+
+
+
+</div>
+<!-- TEST I FORBINDELSE MED TOPUP -->
+<!-- <a href="/uploads/assets/3/original/SeedJuice.jpg" toptions="layout = 'quicklook', shaded = 0, overlayClose = 1, resizable = 0"><img src="/uploads/assets/3/thumb/SeedJuice.jpg" alt="Seedjuice" />
+</a> -->

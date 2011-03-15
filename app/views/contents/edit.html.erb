@@ -1,0 +1,65 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+<h1>Editing content</h1>
+
+<%= error_messages_for :content %>
+
+<% form_for(@content) do |f| %>
+
+<p>
+    <%= f.submit "[Opdater]", :class => 'button'%>
+	<%#= link_to '[Vis]', @content %>
+	<%= link_to '[Tilbage]', contents_path %>
+</p>
+
+<p><b><label for="category">Kategori</label></b><br/>
+<%= f.select(:category, ['User', 'Editor', 'Public', 'Admin'], {}, :class => 'bruger_kategori') %>
+</p>
+
+  <p>
+    <b>Navlabel</b><br />
+    <%= f.text_field :navlabel %>
+  </p>
+<p>
+  <b>Position</b>
+  <%=f.text_field :position, :size => '3' %>
+</p>
+
+<p>
+    <b>Parent</b><br />
+    <%= f.text_field :parent_id %>
+  </p>
+
+<p>
+    <b>Controller</b><br />
+    <%= f.text_field :controller_name %>
+  </p>
+
+<p>
+    <b>Active/Redirect</b><br />
+    <%= f.check_box :active %><%=f.check_box :redirect %>
+  </p>
+
+  <p>
+  <b>Resource:</b>
+  <%=f.text_field :resource_id, :size => '3' %>
+</p>
+
+<p>
+  <b>Resource type:</b>
+  <%=h @content.resource_type %>
+</p>
+
+<p>
+    <b>Ctrl.-redirect</b><br />
+    <%= f.text_field :controller_redirect %>
+</p>
+
+<p>
+    <b>Action-redirect</b><br />
+    <%= f.text_field :action_redirect %>
+</p>
+
+<% end %>
+
+</div>

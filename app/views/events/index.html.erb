@@ -1,0 +1,43 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>
+Begivenheder
+<%= link_to '[Ny begivenhed]', new_event_path %>
+
+</h1>
+
+<table id='zebra_stripes'>
+  <tr>
+	<th>Aktiv</th>
+    <th>Begivenhed</th>
+    <th>Beskrivelse</th>
+    <th>Start dato</th>
+    <th>Slut dato</th>
+    <!-- <th>Position</th>
+        <th>Vurdering</th> -->
+    <th>Handling</th>
+
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+	<td class="pos"><%#=h event.active %><%=link_to active_test(event.active), :action => 'active', :id => event.id%></td>
+    <td><%=h event.title %></td>
+    <td><%=h event.description %></td>
+    <td><%#=h event.start_date%><%=h nice_date(event.start_date) rescue nil %></td>
+    <td><%#=h event.end_date%><%=h nice_date(event.end_date) rescue nil %></td>
+    <!-- <td><%#=h event.position %></td>
+        <td><%#=h event.rating %></td> -->
+	<td>
+		<%= link_to '[Vis]', event %>
+		<%= link_to '[Ret]', edit_event_path(event) %>
+		<%= link_to '[Slet]', event, :confirm => 'Er du sikker?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

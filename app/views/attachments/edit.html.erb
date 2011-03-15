@@ -1,0 +1,48 @@
+<%= render :partial => "layouts/menu" %>
+			
+<div id="admin_formular">
+	
+<h1>Rediger tekst til foto</h1><br>
+<%= image_tag Asset.find(@attachment.asset_id).photo.url(:original) %>
+
+<% form_for(@attachment) do |f| %>
+  <%= f.error_messages %>
+
+  <!-- <p>
+      <%#= f.label :attachable_type %><br />
+      <%#= f.text_field :attachable_type %>
+    </p>
+    <p>
+      <%#= f.label :attachable_id %><br />
+      <%#= f.text_field :attachable_id %>
+    </p> -->
+  <p>
+    <%= f.label :beskrivelse %><br />
+    <%= f.text_field :description, :size => '55' %>
+  </p>
+
+	<!-- <p>
+		<b>Foto tekst</b>
+	<%#= f.check_box :text_include %>
+ 	</p> -->
+ <!-- <p>
+      <%#= f.label :image_size %><br />
+      <%#= f.text_field :image_size %>
+    </p>
+    <p>
+      <%#= f.label :position %><br />
+      <%#= f.text_field :position %>
+    </p>
+    <p>
+      <%#= f.label :asset_id %><br />
+      <%#= f.text_field :asset_id %>
+    </p> -->
+  <p>
+    <%= f.submit "[Opdater]", :class => 'button' %> <%= link_to '[Tilbage]', edit_post_path(@attachment.attachable_id) %>
+  </p>
+<% end %>
+
+<%#= link_to 'Show', @attachment %>
+
+
+</div>

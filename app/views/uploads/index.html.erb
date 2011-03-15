@@ -1,0 +1,25 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>Listing uploads <%= link_to '[Ny upload]', new_upload_path %></h1>
+
+<table id='zebra_stripes'>
+  <tr>
+	<th>Filnavn</th>
+	<th>Handling</th>
+  </tr>
+
+<% for upload in @uploads %>
+<tr>
+	<td><%= link_to upload.photo_file_name, upload.photo.url rescue nil%></td>
+    <td><%= link_to '[Ret]', edit_upload_path(upload) %><%= link_to '[Slet]', upload, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<div class='pagination_info'><%#= page_entries_info @uploads %></div>
+<%= will_paginate @uploads %>
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

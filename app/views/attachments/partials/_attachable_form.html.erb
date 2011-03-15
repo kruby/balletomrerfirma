@@ -1,0 +1,41 @@
+<div id="attachments">
+
+	<!-- <h1>Tilføje fotos til <%#= @attachable.type %> <%#= @attachable.id %> <%#= '"' +  @attachable.title + '"' %> </h1> -->
+
+	<h2>Tilgængelige fotos</h2>
+	<% form_for [@attachable, Attachment.new] do |f| %>
+	<% @asset_ids = Attachment.find_all_by_attachable_id(@attachable.id, :select => 'asset_id') %>
+	<%= hidden_field_tag :id, h(params[:id]) %>
+
+	<table>
+			<tr>
+				<th class="pos">ID</th>
+				<th>Foto</th>
+				<th>Description</th>
+				<th class="pos">√</th>
+			</tr>
+
+		<% for asset in Asset.all %> <!-- Her henter jeg alle assets uden at finde dem først i min controller  -->
+		<% @image = asset.photo.url(:thumb) rescue nil%>
+
+			<tr>
+				<td><%=h asset.id %></td>
+				<td class='thumb' id='images'><%#= image_tag(@image) %>
+				<% @alt = asset.description + ' (' + asset.id.to_s + ')' %>
+				<%= link_to image_tag(@image, :alt => @alt), asset %></td>
+				<td><%=h asset.description %></td>
+				<td>
+				<%#= check_box_tag "attachable[asset_ids][]", asset.id, @attachable.attachments.include?(asset) %>
+				<%= check_box_tag "asset_ids[]", asset.id, @asset_ids.include?(asset.id) %>
+				</td>
+			</tr>
+
+		<% end %>
+
+	</table>
+
+	<br>
+	<%= f.submit "[Opdater]", :class => 'button' %>
+
+	<% end %>	
+</div>

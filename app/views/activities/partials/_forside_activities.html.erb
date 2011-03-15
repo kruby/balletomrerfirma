@@ -1,0 +1,24 @@
+<% for activity in @activities %>
+	<%# content_tag_for :li, activity do %>
+		<div id="activity">
+
+				<p class="title"><%= activity.title %></p>
+				
+				<p class="date_time">
+					<%=h activity.start_date.strftime("%d.%m.%y") %> - <%=h activity.end_date.strftime("%d.%m.%y") %> 
+				</p>
+
+				<p class="body">
+					<%= activity.description %>
+				</p>
+
+		</div>
+
+	<%# end %>
+
+<% end %>
+
+
+
+
+

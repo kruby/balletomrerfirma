@@ -1,0 +1,42 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+<h1>Data fra Pages til migrering</h1>
+
+<table>
+  <tr>
+	<th>Records</th>    
+	
+  </tr>
+
+<tr><td>class AddDataFromPages < ActiveRecord::Migration</tr></td>
+<tr><td>def self.up</tr></td>
+		
+<% for page in @pages %>
+<tr><td>
+		Page.create(
+		:name => '<%=h page.name%>',
+		:title => '<%=h page.title%>', 
+		:body => '<%=h page.body%>',
+		:headline => '<%=h page.headline%>',
+		:active => '<%=h page.active%>',
+		:image => '<%=h page.image%>',
+		:image_class => '<%=h page.image_class%>'
+		
+		)
+		
+		
+</td></tr>
+
+<% end %>
+
+
+<tr><td>def self.down</tr></td>
+<tr><td>drop_table :pages</tr></td>
+<tr><td>end</tr></td>
+<tr><td>end</tr></td>
+
+</table>
+
+<br />
+
+</div>

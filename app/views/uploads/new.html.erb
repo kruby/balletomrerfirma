@@ -1,0 +1,25 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_formular">
+
+<h1>Ny fil til upload</h1>
+
+<%= error_messages_for :upload %>
+
+<% form_for @upload, :html => { :multipart => true } do |f| %>
+<p>
+    <b>Beskrivelse</b><br />
+    <%= f.text_field :description %>
+ </p>
+<p>
+  <b>Fil til upload</b><br />
+  <%= f.file_field :photo  %>
+</p>
+
+  <p>
+    <%= f.submit "[Opret]", :class => 'button' %> <%= link_to '[Tilbage]', uploads_path %>
+  </p>
+<% end %>
+
+
+
+</div>

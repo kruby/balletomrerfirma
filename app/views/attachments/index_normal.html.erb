@@ -1,0 +1,51 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<% form_for @search do |f| %>
+<h1>Attachments
+	<%= f.submit "[Søg]", :name => nil, :class => 'button'  %>
+	<%= link_to '[Find alle]', assets_path %>
+</h1>
+<p id="search_form">
+	Beskrivelse <%= f.text_field :description_like, :size => 30 %>
+	<!-- Type <%#= f.text_field :attachable_type_like, :size => 15 %> -->
+	<!-- OVENSTÅENDE FUNGERER IKKE -->
+	
+</p>
+
+<% end %>
+
+
+<table>
+  <tr>
+    <th class="pos">ID</th>
+	<th>Photo</th>
+	<th class='sort_after_text'><%= order @search, :by => :asset_id, :as => 'Foto' %></th>
+    <th class='sort_after_text'><%= order @search, :by => :description, :as => 'Foto beskriv.' %></th>
+	<th class='sort_after_text'><%= order @search, :by => :attachable_type, :as => 'Type' %></th>
+	<th>ID</th>
+	<th></th>
+	<!-- <th></th> -->
+  </tr>
+
+<% for attachment in @attachments %>
+<% @image = Asset.find(attachment.asset_id).photo.url(:thumb) rescue nil %>
+<% @image_show = Asset.find(attachment.asset_id).photo.url(:image_200) rescue nil %>
+
+  <tr>
+	<td class="pos"><%=h attachment.id %></td>
+	<td class='thumb' id='images'><%= link_to image_tag(@image), @image_show rescue nil %></td>
+	<td class="pos"><%=h attachment.asset_id %></td>
+	<td><%=h attachment.description %></td>
+	<td class="pos"><%=h attachment.attachable_type %></td>
+	<td class="pos"><%=h attachment.attachable_id %></td>
+	<td><%= link_to '[Slet]', attachment, :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+<br />
+<div class='pagination_info'><%#= page_entries_info @attachments %></div>
+<%= will_paginate @attachments %>
+
+</div>

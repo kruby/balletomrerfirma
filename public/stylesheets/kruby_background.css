@@ -1,0 +1,29 @@
+html, body, #bg, #bg table, #bg td {
+    height:100%;
+    width:100%;
+    overflow:hidden;
+}
+
+#bg {
+    position: fixed;
+	margin-top: 110px;
+}
+
+#bg div {
+    height:200%;
+    left:-50%;
+    position:absolute;
+    top:-50%;
+    width:200%;
+}
+
+#bg td {
+    text-align:center;
+    vertical-align:middle;
+}
+
+#bg img {
+    margin:0 auto;
+    min-height:50%;
+    min-width:50%;
+}

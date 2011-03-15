@@ -1,0 +1,114 @@
+#content_wrapper #content_outer_simple {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    padding: 5px;
+    width: 600px;
+}
+
+#content_wrapper #content_outer_simple #blogpost_simple {
+	/*border: 2px solid #9EC8A2;*/
+	margin: 0px 0px 0px 0px;
+	padding: 4px;
+}
+
+#blogpost_simple .topline {
+    border-bottom: 1px solid #9EC8A2;
+    font-size: 8px;
+    font-weight: bolder;
+    height: 25px;
+    line-height: 25px;
+    margin-right: 5px;
+    overflow: hidden;
+    padding: 0px 0px 5px 2px;
+    text-align: left;
+    width: auto;
+}
+
+#blogpost_simple #event_assets {
+    font-size: 8px;
+    font-weight: bolder;
+    height: auto;
+    line-height: 25px;
+    margin-right: 5px;
+	margin-bottom: 15px;
+    overflow: hidden;
+    padding: 0px 0px 5px 5px;
+    text-align: left;
+    width: auto;
+    border-bottom: 1px solid #9EC8A2;
+
+}
+
+#blogpost_simple .title {
+    color: #437148;
+    float: left;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+	width: 450px;
+}
+
+#blogpost_simple .date_time {
+	float: right;
+    color: #000000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 2px 5px 0px 3px;
+    padding: 4px 0 5px;
+    text-align: right;
+    width: auto;
+	
+}
+
+#blogpost_simple .body p, #blogpost_simple p {
+    color: #000000;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 15px;
+    margin: 5px 5px 5px 5px;
+    text-align: left;
+}
+
+#blogpost_simple #clip_outer {
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+    float: left;
+    height: 60px;
+	width: 60px;
+    margin-right: 5px;
+    margin-top: 2px;
+    position: relative;
+
+}
+
+#blogpost_simple #clip_inner {
+    clip: rect(10px, 70px, 70px, 10px);
+    left: -10px;
+    position: absolute;
+    top: -10px;
+}
+
+#content_outer_simple .pagination {
+	color:#3D6641;
+	font-size:12px;
+	text-align:center;
+	margin: 0px auto 0px auto;
+	width: 100px;
+}
+
+
+#content_outer_simple .pagination a {
+	text-decoration: none;
+	font-size:12px;
+	font-weight:normal;
+	color:#3D6641;
+}
+
+#content_outer_simple .pagination span.current {
+	font-weight: bold;
+	font-size: 14px;
+	color: #3D6641;
+}

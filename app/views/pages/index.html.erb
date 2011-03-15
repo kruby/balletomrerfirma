@@ -1,0 +1,43 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>Liste over indholdssider <%= link_to '[Ny side]', new_page_path %></h1>
+
+<table id='zebra_stripes'>
+  <tr>
+	<th class='pos'>ID</th>
+	<th>Akt.</th>
+	<th>Navn</th>
+    <th>Titel</th>
+    <th>Indhold</th>
+	<th>Handling</th>
+  </tr>
+
+<% for page in @pages %>
+  <tr>
+	<td class='pos'><%=h page.id %></td>
+	<% 	if page.active 
+			@aktiv = '√' 
+		else 
+			@aktiv = '–' 
+		end %>
+	    <td class="pos"><%=link_to @aktiv, :action => 'active', :id => page.id%></td>
+    <td><%=h page.name %></td>
+	<td><%=h page.title %></td>
+    <td><%=h truncate(page.body, :length => 30) -%></td>
+
+    <td>
+    <%= link_to '[Ret]', edit_page_path(page) %>
+    <%= link_to '[Slet]', page, :confirm => 'Er du sikker?', :method => :delete %>
+</td>
+  </tr>
+<% end %>
+<tr>
+  <tfoot></tfoot>
+</tr>
+</table>
+
+<br />
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>
