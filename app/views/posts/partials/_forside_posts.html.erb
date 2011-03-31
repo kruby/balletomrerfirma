@@ -33,12 +33,12 @@
 
 				<div class="body">
 					<% @length = 250 %>
-					<%= truncate(textilize(post.body), :length => @length, :separator => ' ' )%>
+					<%= truncate(Project(post.body), :length => @length, :separator => ' ' )%>
 					<% if @length <= post.body.length %><!-- <br> -->
 					   <%= link_to '(læs mere)', post_path(post.id), :class => 'links' %>
 					<% end %>
 					  
-					<%#= textilize(post.body) %>					
+					<%#= Project(post.body) %>					
 
 				</div>
 

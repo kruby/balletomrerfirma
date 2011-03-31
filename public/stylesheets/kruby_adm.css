@@ -323,9 +323,24 @@ td {
 	width: 80px;
 }
 
+#admin_formular #start_stop_dato {
+	width: 600px;
+	height: 20px;
+}
+
+
+#admin_formular #start_stop_dato p.projekt_felt {
+	float: left;
+	margin: 0px 15px 0px 0px;
+}
+
 #admin_formular #start_stop_dato p.dato_felt {
 	float: left;
 	margin: 0px 15px 0px 0px;
+}
+
+#admin_formular #start_stop_dato p.dato_felt input {
+	width: 100px;
 }
 
 

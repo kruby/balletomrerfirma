@@ -4,7 +4,7 @@ Hej alle,<br/><br/>
 
 
 <b><%= @comment.title rescue nil %></b><br/>
-<%= textilize(@comment.body) rescue nil %><br/><br/>
+<%= Project(@comment.body) rescue nil %><br/><br/>
 
 Skrevet af: <%= @user.blogname rescue nil %><br/><br/>
 

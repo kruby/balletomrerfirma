@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 19) do
+ActiveRecord::Schema.define(:version => 18) do
 
   create_table "activities", :force => true do |t|
     t.boolean  "active"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 19) do
   create_table "assets", :force => true do |t|
     t.string   "description"
     t.integer  "user_id"
-    t.integer  "event_id"
+    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -57,18 +57,6 @@ ActiveRecord::Schema.define(:version => 19) do
     t.string   "controller_redirect"
     t.string   "action_redirect"
     t.boolean  "redirect"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "events", :force => true do |t|
-    t.boolean  "active",      :default => true
-    t.string   "title"
-    t.text     "description"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.integer  "position"
-    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -115,6 +103,18 @@ ActiveRecord::Schema.define(:version => 19) do
     t.integer  "parent_id"
     t.integer  "user_id"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.boolean  "active",      :default => true
+    t.string   "title"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "position"
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

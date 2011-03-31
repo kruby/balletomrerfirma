@@ -1,16 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.add_to_event '/assets/add_to_event/:id', :controller => 'assets', :action => 'add_to_event'
+  map.add_to_project '/assets/add_to_project/:id', :controller => 'assets', :action => 'add_to_project'
   
-  map.events_attachments_paged 'events/:event_id/attachments/page/:page', :controller => 'attachments'
-  map.event_attachments_paged 'events/:id/page/:page', :controller => 'events'
+  map.projects_attachments_paged 'projects/:project_id/attachments/page/:page', :controller => 'attachments'
+  map.project_attachments_paged 'projects/:id/page/:page', :controller => 'projects'
   
   #map.add_to_post '/assets/add_to_post/:id', :controller => 'assets', :action => 'add_to_post'
   
-  map.paged_events '/events/:id/page/:page', :controller => 'events'
-  map.paged_event_attachments '/events/:event_id/page/:page', :controller => 'events'
+  map.paged_projects '/projects/:id/page/:page', :controller => 'projects'
+  map.paged_project_attachments '/projects/:project_id/page/:page', :controller => 'projects'
   
-  map.resources :events, :has_many => :attachments
+  map.resources :projects, :has_many => :attachments
 
   map.resources :activities
 
@@ -55,7 +55,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :lists
 
-  map.eventslist '/eventslist', :controller => "events", :name => 'eventslist', :action => 'eventslist'
+  map.projekter '/projekter', :controller => "projects", :name => 'projekter', :action => 'projekter'
   map.upload_dir '/publicimages', :controller => 'uploads', :action => 'publicimages'
   map.blog '/blog', :controller => "viewer", :name => 'blog', :action => 'blog'
   map.bloggen '/bloggen', :controller => 'posts', :action => 'blog'
@@ -122,7 +122,9 @@ ActionController::Routing::Routes.draw do |map|
   #map.root :controller => "sessions", :action => 'new'
   #map.root :controller => "pages", :id => 15
   # See how all your routes lay out with "rake routes"
-  map.connect '', :controller => 'viewer', :name => 'blog', :action => 'show'
+  map.om '', :controller => 'viewer', :name => 'Om os', :action => 'show'
+  map.kontakt '', :controller => 'viewer', :name => 'Kontakt', :action => 'show'
+  #map.projekter '', :controller => 'viewer', :name => 'Projekter', :action => 'projekter'
   
 
   # Install the default routes as the lowest priority.

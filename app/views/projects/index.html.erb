@@ -1,0 +1,43 @@
+<%= render :partial => "layouts/menu" %>
+<div id="admin_liste">
+
+<h1>
+Projekter
+<%= link_to '[Nyt projekt]', new_project_path %>
+
+</h1>
+
+<table id='zebra_stripes'>
+  <tr>
+	<th>Aktiv</th>
+    <th>Begivenhed</th>
+    <th>Beskrivelse</th>
+    <th>Start dato</th>
+    <th>Slut dato</th>
+    <!-- <th>Position</th>
+        <th>Vurdering</th> -->
+    <th>Handling</th>
+
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+	<td class="pos"><%#=h project.active %><%=link_to active_test(project.active), :action => 'active', :id => project.id%></td>
+    <td><%=h project.title %></td>
+    <td><%=h project.description %></td>
+    <td><%#=h project.start_date%><%=h nice_date(project.start_date) rescue nil %></td>
+    <td><%#=h project.end_date%><%=h nice_date(project.end_date) rescue nil %></td>
+    <!-- <td><%#=h project.position %></td>
+        <td><%#=h project.rating %></td> -->
+	<td>
+		<%= link_to '[Vis]', project %>
+		<%= link_to '[Ret]', edit_project_path(project) %>
+		<%= link_to '[Slet]', project, :confirm => 'Er du sikker?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+<%= render :partial => "layouts/zebra_stripes" %>

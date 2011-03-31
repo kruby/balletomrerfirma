@@ -1,29 +1,35 @@
-<div id="forside_events">
+<div id="forside_projects">
 	
-	<% for event in @events %>
+	<% for project in @projects %>
 
-		<% if event.attachments.count > 0 %>
+		<% if project.attachments.count > 0 %>
 	
 		
 
-					<div id="event">
+					<div id="project">
 
-						<% @attachment = event.attachments.first %>
+						<% @attachment = project.attachments.first %>
 			
 							<%# @alt = Asset.find(	attachment.asset_id).description rescue nil %>
 							<% @alt = @attachment.description rescue nil %>
-							<% @image = Asset.find(@attachment.asset_id).photo.url(:image_200) %>
+							<% @image = Asset.find(@attachment.asset_id).photo.url(:image_300) %>
 							<% @image_show = Asset.find(@attachment.asset_id).photo.url(:original)%>
 					
 							<div id="clip_outer">
 								<div id="clip_inner">
-									<span class='thumb' id='event_images_<%=event.id%>'>
-										<%= link_to image_tag(@image, :alt => @alt), event %><%#= link_to image_tag(@image, :alt => @alt), @image_show %>
+									<span class='thumb' id='project_images_<%=project.id%>'>
+										<%= link_to image_tag(@image, :alt => @alt), project %><%#= link_to image_tag(@image, :alt => @alt), @image_show %>
 									</span>
 									<!-- HER HAR VI BRUGT POST.ID TIL AT GØRE GRUPPEN AF FOTOS UNIK, SOM DET OGSÅ SES NEDERST I JAVASCRIPT I GROUP -->
 								</div>
 							</div>
 							
+							<div id="project_title">
+								<p class='title'>
+									<%=h truncate(project.title, :length => 30) %>
+								</p>
+									<%= link_to "(Læs mere...)", project_path(project) %>
+							</div>
 					</div>
 
 		<% end %>
@@ -34,8 +40,8 @@
 		  <%# javascript_tag do %>
 
 		     		TopUp.addPresets({
-				    "#event_images_<%= event.id %> a": {
-				      group: "event_images_<%= event.id %>",
+				    "#project_images_<%= project.id %> a": {
+				      group: "project_images_<%= project.id %>",
 					  title: "{alt} - {current} af {total}",
 				      layout: "dashboard",
 				      modal: 1,

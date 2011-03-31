@@ -2,15 +2,14 @@
 			
 <div id="admin_formular">
 	
-	<%= render :partial => "events/partials/edit" %>
+	<%= render :partial => "projects/partials/edit" %>
 
-<br><br>
 <% if User.find(current_user.id).category == 'Admin' %>
 
 	<div id="admin_liste">
 	
 	
-		<%= render :partial => "events/partials/attachments_sortable" %>
+		<%= render :partial => "projects/partials/attachments_sortable" %>
 	
 
 	</div>

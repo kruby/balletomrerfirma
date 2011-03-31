@@ -2,35 +2,35 @@ class AddDefaultDataBlog < ActiveRecord::Migration
 
   def self.up
     Post.create( 
-    :title => 'Blogindlæg nr. 1',
+    :title => 'Projekt nr. 1',
     :author => 'TKS',
     :active => true,
     :user_id => 1,
-    :body => 'Her er indlæg nr. 1, som handler om hvor godt det kunne være at...' )
+    :body => 'Her er projekt nr. 1, som er det nye...' )
     Post.create( 
-    :title => 'Blogindlæg nr. 2',
+    :title => 'Projekt nr. 2',
     :author => 'TKS',
     :active => true,
     :user_id => 1,
-    :body => 'Her er indlæg nr. 2, som handler om hvor godt det kunne være at...' )
+    :body => 'Her er projekt nr. 2, som er det nye...' )
     Post.create( 
-    :title => 'Blogindlæg nr. 3',
+    :title => 'Projekt nr. 3',
     :author => 'TKS',
     :active => true,
     :user_id => 1,
-    :body => 'Her er indlæg nr. 3, som handler om hvor godt det kunne være at...' )
+    :body => 'Her er projekt nr. 3, som er det nye...' )
     Post.create( 
-    :title => 'Blogindlæg nr. 4',
+    :title => 'Projekt nr. 4',
     :author => 'TKS',
     :active => true,
     :user_id => 1,
-    :body => 'Her er indlæg nr. 4, som handler om hvor godt det kunne være at...' )
+    :body => 'Her er projekt nr. 4, som er det nye...' )
     Post.create( 
-    :title => 'Blogindlæg nr. 5',
+    :title => 'Projekt nr. 5',
     :author => 'TKS',
     :active => true,
     :user_id => 1,
-    :body => 'Her er indlæg nr. 5, som handler om hvor godt det kunne være at...' )
+    :body => 'Her er projekt nr. 5, som er det nye...' )
   end
 
   def self.down

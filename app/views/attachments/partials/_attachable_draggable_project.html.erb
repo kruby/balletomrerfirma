@@ -1,7 +1,7 @@
 <div id="attachments_links">
 	<% @page %>
-	<%= link_to '[Tilbage]', edit_event_path(params[:event_id]) %>
-	<%= link_to '[Opdater]', event_attachments_path(params[:event_id], :page => params[:page]) %><br>
+	<%= link_to '[Tilbage]', edit_project_path(params[:project_id]) %>
+	<%= link_to '[Opdater]', project_attachments_path(params[:project_id], :page => params[:page]) %><br>
 </div>
 
 <%= render :partial => '/attachments/partials/attachments'%>
@@ -13,10 +13,10 @@
 
      		$('.draggable').draggable();
 		    $("#receive_images").droppable({
-		      drop: function(event, ui){
+		      drop: function(project, ui){
 			        $.ajax({
 		              type: 'post', 
-		              data: 'id=' + $(ui.draggable).attr('id') + '&event_id=<%=@attachable.id-%>', 
+		              data: 'id=' + $(ui.draggable).attr('id') + '&project_id=<%=@attachable.id-%>', 
 		              dataType: 'script',
 		              url: '/attachments/create'})
 		            }

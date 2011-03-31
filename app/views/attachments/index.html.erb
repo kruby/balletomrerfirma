@@ -3,9 +3,9 @@
 
 <h1>Fotos vedhæftet <%#= @attachable.category.downcase %> <%= @attachable.id %> <%= '"' +  @attachable.title + '"' %></h1>
 
-<% if params[:event_id] %>
+<% if params[:project_id] %>
 
-<%= render :partial => "attachments/partials/attachable_draggable_event" %>
+<%= render :partial => "attachments/partials/attachable_draggable_project" %>
 
 <% else %>
 

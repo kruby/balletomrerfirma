@@ -1,6 +1,6 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateProjects < ActiveRecord::Migration
   def self.up
-    create_table :events do |t|
+    create_table :projects do |t|
       t.boolean  :active, :default => 1
       t.string :title
       t.text :description
@@ -14,6 +14,6 @@ class CreateEvents < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :events
+    drop_table :projects
   end
 end

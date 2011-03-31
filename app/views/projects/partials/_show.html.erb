@@ -2,31 +2,31 @@
 
 	<div class="topline">
 
-		<div class="title"><%= @event.title %></div>
+		<div class="title"><%= @project.title %></div>
 		
 		<div class="date_time">
-			<%=h @event.start_date.strftime("%d.%m.%y") rescue nil %> - <%=h @event.end_date.strftime("%d.%m.%y") rescue nil %>
+			<%=h @project.start_date.strftime("%d.%m.%y") rescue nil %> - <%=h @project.end_date.strftime("%d.%m.%y") rescue nil %>
 		</div>
 
 	</div> <!-- topline -->
 	
 	<div class="body">
 
-		<%= textilize(@event.description) %>					
+		<%= textilize(@project.description) %>					
 
 	</div>
 
-	<% if @event.attachments.count > 0 %>
+	<% if @project.attachments.count > 0 %>
 
-	<div id="event_assets">
+	<div id="project_assets">
 
-		<% for attachment in @event.attachments %>
+		<% for attachment in @project.attachments %>
 		<% @image = Asset.find(attachment.asset_id).photo.url(:image_100) %>
 		<% @image_show = Asset.find(attachment.asset_id).photo.url(:original)%> 
 		<% @alt = attachment.description rescue nil %>
 		<div id="clip_outer">
 			<div id="clip_inner">
-				<span class='thumb' id='event_images_<%=@event.id%>'><%= link_to image_tag(@image, :alt => @alt), @image_show %></span>
+				<span class='thumb' id='project_images_<%=@project.id%>'><%= link_to image_tag(@image, :alt => @alt), @image_show %></span>
 				<!-- HER HAR VI BRUGT POST.ID TIL AT GØRE GRUPPEN AF FOTOS UNIK, SOM DET OGSÅ SES NEDERST I JAVASCRIPT I GROUP -->
 			</div>
 		</div>
@@ -45,8 +45,8 @@
 		<% javascript_tag do %>
 
 		TopUp.addPresets({
-			"#event_images_<%= @event.id %> a": {
-				group: "post_images_<%= @event.id %>",
+			"#project_images_<%= @project.id %> a": {
+				group: "post_images_<%= @project.id %>",
 				title: "{alt} - {current} af {total}",
 				layout: "dashboard",
 				modal: 1,

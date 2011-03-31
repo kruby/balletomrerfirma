@@ -9,8 +9,11 @@
 			<div id="content_outer_simple">
 				
 			
-					<%= render :partial => "events/partials/show" %>
+				<%= will_paginate @posts %>
+
+					<%= render :partial => "projects/partials/projectslist" %>
 				
+				<%= will_paginate @posts %>
 				
 			</div>
 

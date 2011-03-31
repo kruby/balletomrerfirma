@@ -14,7 +14,7 @@
 
      		$('.draggable').draggable();
 		    $("#receive_images").droppable({
-		      drop: function(event, ui){
+		      drop: function(project, ui){
 			        $.ajax({
 		              type: 'post', 
 		              data: 'id=' + $(ui.draggable).attr('id') + '&post_id=<%=@attachable.id-%>', 

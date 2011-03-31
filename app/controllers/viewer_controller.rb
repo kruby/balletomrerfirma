@@ -5,13 +5,25 @@ class ViewerController < ApplicationController
     
     if logged_in? or Parameter.find_by_name('Adgang').value == "Åben"
       
-      @page = Page.find(params[:id])
+      #@page = Page.find(params[:id])
+      
+      @page = Page.find_by_name(params[:name])
 
-      @content = @page.body rescue 'Indhold følger snarest'
-      @title = @page.title rescue 'Indhold følger snarest'
+      #@content = @page.body rescue 'Indhold følger snarest'
+      #@title = @page.title rescue 'Indhold følger snarest'
 
-      archive_count
-      session[:menu_id] = params[:id]
+      #archive_count
+      
+      @search_project = Project.forside_projects.search(params[:search])
+      @projects = @search_project.all.paginate :page => params[:page_project], :per_page => 4
+      
+      #@search_post = Post.forside_blogs_active.search(params[:search])
+      #@posts = @search_post.all.paginate :page => params[:page_post], :per_page => 4
+
+      #@search_activity = Activity.forside_activities.search(params[:search])
+      #@activities = @search_activity.all.paginate :page => params[:page_activity], :per_page => 3
+      
+      session[:menu_id] = @page.id
 
       render :action => "show"
       
@@ -24,42 +36,62 @@ class ViewerController < ApplicationController
   end
 
   def forside
-    @access = Parameter.find_by_name('Adgang').value
-    @whereabouts = Parameter.find_by_name('Whereabouts').value
+    if Parameter.find_by_name('Adgang').value == "Åben"
+      
+       @page = Page.find_by_name('Forside')
 
-    render :layout => "startup_page"
+      #@search_post = Post.forside_blogs_active.search(params[:search])
+      #@posts = @search_post.all.paginate :page => params[:page_post], :per_page => 4
 
-  end
+      #@search_activity = Activity.forside_activities.search(params[:search])
+      #@activities = @search_activity.all.paginate :page => params[:page_activity], :per_page => 3
 
-
-  def blog
-    
-    if logged_in? or Parameter.find_by_name('Adgang').value == "Åben"
-
-      @search_post = Post.forside_blogs_active.search(params[:search])
-      @posts = @search_post.all.paginate :page => params[:page_post], :per_page => 4
-
-      @search_activity = Activity.forside_activities.search(params[:search])
-      @activities = @search_activity.all.paginate :page => params[:page_activity], :per_page => 3
-
-      @search_event = Event.forside_events.search(params[:search])
-      @events = @search_event.all.paginate :page => params[:page_event], :per_page => 4
+      @search_project = Project.forside_projects.search(params[:search])
+      @projects = @search_project.all.paginate :page => params[:page_project], :per_page => 4
 
       #@posts = Post.forside_blogs_active.all(:limit => 4)
-      @whereabouts = Parameter.find_by_name('Whereabouts').value
-      @facebook = Parameter.find_by_name('Facebook').value
-      @twitter = Parameter.find_by_name('Twitter').value
-      @youtube = Parameter.find_by_name('Youtube').value
-
+      
+      #session[:menu_id] = params[:id]
+      session[:menu_id] = 1
       render :action => "show"
 
     else
       
-         redirect_to root_url
+      #Skal lede videre til en side der viser at der foretage ændringer.
 
     end
 
   end
+
+
+  # def blog
+  #   
+  #   if logged_in? or Parameter.find_by_name('Adgang').value == "Åben"
+  # 
+  #     @search_post = Post.forside_blogs_active.search(params[:search])
+  #     @posts = @search_post.all.paginate :page => params[:page_post], :per_page => 4
+  # 
+  #     @search_activity = Activity.forside_activities.search(params[:search])
+  #     @activities = @search_activity.all.paginate :page => params[:page_activity], :per_page => 3
+  # 
+  #     @search_project = Project.forside_projects.search(params[:search])
+  #     @projects = @search_project.all.paginate :page => params[:page_project], :per_page => 4
+  # 
+  #     #@posts = Post.forside_blogs_active.all(:limit => 4)
+  #     @whereabouts = Parameter.find_by_name('Whereabouts').value
+  #     @facebook = Parameter.find_by_name('Facebook').value
+  #     @twitter = Parameter.find_by_name('Twitter').value
+  #     @youtube = Parameter.find_by_name('Youtube').value
+  # 
+  #     render :action => "show"
+  # 
+  #   else
+  #     
+  #        redirect_to root_url
+  # 
+  #   end
+  # 
+  # end
 
   def index
     @pagetitle = 'Overskrifter fra Viewercontroller!'

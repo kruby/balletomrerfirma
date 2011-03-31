@@ -27,12 +27,12 @@ class AssetsController < ApplicationController
     end
   end
   
-  def add_to_event
-    @events = Event.find(:all, :order => 'photo_updated_at DESC')
+  def add_to_project
+    @projects = Project.find(:all, :order => 'photo_updated_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml { render :xml => @events }
+      format.xml { render :xml => @projects }
     end
   end
 

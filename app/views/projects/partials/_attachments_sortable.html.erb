@@ -1,5 +1,5 @@
-<h2>Tilhørende fotos <%= link_to '[Opdater]', edit_event_path(:event_id => params[:id])%>
-<%= link_to '[Tilføj fotos]', events_attachments_paged_path(:event_id => params[:id], :page => 1)%> 
+<h2>Tilhørende fotos <%= link_to '[Opdater]', edit_project_path(:project_id => params[:id])%>
+<%= link_to '[Tilføj fotos]', projects_attachments_paged_path(:project_id => params[:id], :page => 1)%> 
 <br> 
 <%#= link_to '[Tilføj fotos]', add_to_post_path (:id => params[:id] )%>
 </h2>
@@ -10,7 +10,7 @@
 	
 	<ul id="sortable_attachments">
 
-		<% for attachment in @event.attachments.find(:all, :order => 'position') %>
+		<% for attachment in @project.attachments.find(:all, :order => 'position') %>
 	
 		<% @image = Asset.find(attachment.asset_id).photo.url(:image_50) rescue nil%>
 		<% @attachment_and_id = attachment.type.to_s + '_' + attachment.id.to_s %>
@@ -21,7 +21,7 @@
 				<%#= image_tag(@image, :id => @attachment_and_id, :alt => attachment.description) %>
 				<%= image_tag(@image, :id => @attachment_and_id, :alt => attachment.description, :class => 'handle', :title => attachment.description ) rescue nil %>
 				<div id="sortable_attachments_menus">
-					<%= link_to '[Ret]', edit_attachment_path(attachment.id, :event_id => @event.id) %>
+					<%= link_to '[Ret]', edit_attachment_path(attachment.id, :project_id => @project.id) %>
 					<%= link_to '[÷]', attachment, :confirm => 'Sikker på du vil slette?', :method => :delete %>
 				</div>
 			<% end %>
@@ -55,7 +55,7 @@
           update: function(){
             $.ajax({
                 type: 'post', 
-                data: $('#sortable_attachments').sortable('serialize') + '&event_id=<%=@event.id-%>', 
+                data: $('#sortable_attachments').sortable('serialize') + '&project_id=<%=@project.id-%>', 
                 dataType: 'script', 
                 complete: function(request){
                     $('#sortable_attachments').effect('highlight');

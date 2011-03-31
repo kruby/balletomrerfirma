@@ -22,7 +22,7 @@ class AttachmentsController < ApplicationController
       #@page == params[:page]   
       @attachments = @attachable.attachments.paginate(:page => params[:page])
       #@assets = Asset.search(params[:search], params[:page])
-      @assets = Asset.all.paginate :page => params[:page], :per_page => 30
+      @assets = Asset.descend_by_id.all.paginate :page => params[:page], :per_page => 30
 
     end
 
@@ -165,9 +165,9 @@ class AttachmentsController < ApplicationController
    
   
   def prioritize_attachments
-    if params[:event_id]
-      event = Event.find(params[:event_id])
-      attachments = event.attachments
+    if params[:project_id]
+      project = Project.find(params[:project_id])
+      attachments = project.attachments
     else
       post = Post.find(params[:post_id])
       attachments = post.attachments
@@ -210,7 +210,7 @@ class AttachmentsController < ApplicationController
     if params[:post_id]
       @attachment_ids = Post.find(attachable.id).attachments(:select => :asset_id)
     else
-      @attachment_ids = Event.find(attachable.id).attachments(:select => :asset_id)
+      @attachment_ids = Project.find(attachable.id).attachments(:select => :asset_id)
     end
     @array = []
     @c = 0
