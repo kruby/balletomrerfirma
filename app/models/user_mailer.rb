@@ -32,15 +32,15 @@ class UserMailer < ActionMailer::Base
     def setup_email_1(user)
       @recipients           = "#{user.email}"
       #@recipients           = "ts@kruby.dk"
-      @from                 = "tina@sundmedkost.dk"
-      @subject              = "SundMedKost "
-      @headers["Reply-to"]  = "tina@sundmedkost.dk"
+      @from                 = "sk@bltf.dk"
+      @subject              = "Balle Tømrerfirma "
+      @headers["Reply-to"]  = "sk@bltf.dk"
       @sent_on              = Time.now
       content_type  "text/html"
     end
     
     def setup_email_2(user)
-      @recipients           = "tina@sundmedkost.dk"
+      @recipients           = "sk@bltf.dk"
       @from                 = "#{user.email}"
       @subject              = "Nyt fra bloggen: "
       @headers["Reply-to"]  = "#{user.email}"
@@ -58,7 +58,7 @@ class UserMailer < ActionMailer::Base
     end
     
     def setup_email_3(user)
-      @recipients           = "tina@sundmedkost.dk"
+      @recipients           = "sk@bltf.dk"
       @from                 = "#{user.email}"
       @subject              = "Kommentar fra bloggen: "
       @headers["Reply-to"]  = "#{user.email}"

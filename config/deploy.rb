@@ -8,9 +8,9 @@ require 'brightbox/passenger'
 set :application, "balletomrerfirma"
 
 # Primary domain name of your application. Used in the Apache configs
-set :domain, "www.balletomrerfirma.dk"
+set :domain, "www.bltf.dk"
 
-set :domain_aliases, "balletomrerfirma.dk,bltf.dk,www.bltf.dk"
+set :domain_aliases, "www.balletomrerfirma.dk,balletomrerfirma.dk,bltf.dk"
 
 ## List of servers
 server "krsgrd-001.vm.brightbox.net", :app, :web, :db, :primary => true

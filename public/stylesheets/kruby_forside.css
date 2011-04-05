@@ -153,6 +153,12 @@ object {
 	margin-bottom: 5px;
 }
 
+#forside_wrapper img {
+	width: 531px;
+	margin: 10px 0px 10px 0px;
+}
+
+
 #forside_wrapper .foto {
 	font-size:12px;
 	font-weight:bold;
@@ -193,7 +199,7 @@ object {
 	font-weight: bold;
 	text-align:left;
 	color:#000;
-	padding: 3px 0px 0px 8px;
+	padding: 3px 0px 0px 15px;
 }
 #forside_wrapper h1 a{	
 	font-size:10px;

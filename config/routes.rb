@@ -55,6 +55,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :lists
 
+  map.fotos '/brugere', :controller => "users", :name => 'brugere', :action => 'index'
+  map.fotos '/fotos', :controller => "assets", :name => 'fotos', :action => 'index'
+  map.fotos '/sider', :controller => "pages", :name => 'sider', :action => 'index'
   map.projekter '/projekter', :controller => "projects", :name => 'projekter', :action => 'projekter'
   map.upload_dir '/publicimages', :controller => 'uploads', :action => 'publicimages'
   map.blog '/blog', :controller => "viewer", :name => 'blog', :action => 'blog'

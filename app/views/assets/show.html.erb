@@ -15,12 +15,13 @@
 				<% @url_2 = @asset.photo.url(image_size) rescue nil %>	
 				<%= image_tag @asset.photo.url(image_size) rescue nil %><br>
 				
-				<% @link = '!http://sundmedkost.dk' + @asset.photo.url(image_size) + '!' rescue nil %>
+				<%# @link = '!http://bltf.dk' + @asset.photo.url(image_size) + '!' rescue nil %>
+				<% @link = '!http://balletomrerfirma.local' + @asset.photo.url(image_size) + '!' rescue nil %>
 				
 				<div class="image_link"><%= @link %>
 				<%= clippy(@link) %></div>
 				
-				<!-- <div class="image_link">!http://sundmedkost.local<%#= h @asset.photo.url(image_size) rescue nil %>!</div> -->
+				
 			</div>
 		<% end %>
 
