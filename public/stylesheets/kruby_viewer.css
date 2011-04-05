@@ -24,8 +24,7 @@
 }
 
 #content_wrapper #content_outer_extra {
-
-	width: 800px;
+	width: 790px;
 	padding: 5px;
 	height: auto;
 }
@@ -44,6 +43,8 @@
 	width: 550px;
 	min-height: 500px;
 	height: auto;
+	border-right: 1px solid #9EC8A2;
+	padding: 0px 3px 0px 0px;
 }
 
 #content_wrapper #content_right div#forums {
@@ -65,13 +66,14 @@
 
 #content_wrapper #content_right div#latest_photos {
 	margin-bottom: 10px;
-	width: 217px;
+	width: 212px;
 	min-height: 140px;
 	background-color: #5B7D61;
-	border: 2px solid #D4E6CD;
+	/*border: 2px solid #D4E6CD;*/
 	height: auto;
 	overflow: hidden;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #D4E6CD;
 }
 
 
@@ -83,7 +85,7 @@
 
 
 
-#content_wrapper #content_left div#headline span#blog {
+/*#content_wrapper #content_left div#headline span#blog {
 	font-weight: bold;
 	font-size: 30px;
 	padding-left: 3px;
@@ -97,7 +99,7 @@
 #content_wrapper #blog_by {
 	width: 300px;
 	float: left;
-}
+}*/
 
 #content_left .pagination {
 	color:#3D6641;
@@ -128,7 +130,7 @@
 	float: left;
 	width: 221px;
 	height: 500px;
-	margin-left: 10px;
+	margin-left: 11px;
 	height: auto;
 
 }
@@ -241,7 +243,7 @@
 
 #top_outer #top_logo {
 	float: left;
-	padding: 19px 0px 25px 25px;
+	padding: 20px 0px 25px 25px;
 }
 
 #top_outer #top_logo_2 {
@@ -309,7 +311,7 @@
 }
 
 
-#content_right div#activities {
+/*#content_right div#activities {
 	color: #FFF;
 	width: 200px;
 	height: 200px;
@@ -358,21 +360,20 @@
 	font-weight: bold;
 	width: 203px;
 	padding-left: 2px;
-}
+}*/
 
-#content_wrapper #content_right div#latest_photos p.headline {
-	border-bottom: 1px solid #FFF;
-	margin: 10px 3px 5px 5px;
-	color: #FFF;
-	font-size: 14px;
+#content_wrapper #content_right div#headline {
+/*	border-bottom: 1px solid #000;
+*/	margin: 15px 3px 5px 3px;
+	font-size: 22px;
 	font-weight: bold;
 	width: 205px;
 }
 
-#content_wrapper #content_right div#latest_photos p.headline a {
+#content_wrapper #content_right div#headline a {
 	text-decoration: none;
-	color: #FFF;
 	margin-left: 2px;
+	color: #5B7D61;
 }
 
 #content_wrapper #content_right div#activities {
@@ -388,7 +389,7 @@
 	position:relative;
 	width:200px;
 	height:100px;
-	margin: 2px 5px 3px 6px;
+	margin: 5px;
 	border: 1px solid #999;
 	background-color: #FFF;
 }

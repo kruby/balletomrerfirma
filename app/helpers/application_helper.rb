@@ -7,7 +7,7 @@ module ApplicationHelper
     "<script type='text/javascript'>
 
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-20355035-4']);
+      _gaq.push(['_setAccount', 'UA-20355035-5']);
       _gaq.push(['_trackPageview']);
 
       (function() {

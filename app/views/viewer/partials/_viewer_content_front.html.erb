@@ -15,9 +15,12 @@
 		</div>
 
 		<div id="content_right">
+			<!-- <div id="current_projects"> -->
+				<div id="headline"><%= link_to 'Aktuelle projekter', projekter_path %></div> 
+			<!-- </div> -->
 			
 			<div id="latest_photos">
-				<p class="headline"><%= link_to 'Aktuelle projekter', projekter_path %></p> 
+				
 				
 				<%= render :partial => "projects/partials/forside_projects" %>
 				

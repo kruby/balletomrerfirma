@@ -54,6 +54,7 @@ object {
 #forside_wrapper {
 	width: 550px;
 	min-height: 400px;
+	padding: 0px 0px 0px 2px;
 }
 
 #forside_wrapper ul {
@@ -145,8 +146,12 @@ object {
 	font-weight:normal;
 	text-align:left;
 	color:#000;
-	margin: 0px 5px 5px 10px; /*TRBL*/
+	margin: 0px 5px 5px 6px; /*TRBL*/
 	line-height: 15px;	
+}
+
+#forside_wrapper p img {
+	margin: 8px 0px 0px -2px;
 }
 
 #forside_wrapper .body br, #forside_wrapper br {
@@ -199,7 +204,7 @@ object {
 	font-weight: bold;
 	text-align:left;
 	color:#000;
-	padding: 3px 0px 0px 15px;
+	padding: 3px 0px 0px 5px;
 }
 #forside_wrapper h1 a{	
 	font-size:10px;
