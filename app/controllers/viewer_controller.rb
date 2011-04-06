@@ -3,7 +3,7 @@ class ViewerController < ApplicationController
   def show
 
     
-    if logged_in? or Parameter.find_by_name('Adgang').value == "Åben"
+    if logged_in? or site_is_open
       
       #@page = Page.find(params[:id])
       
@@ -36,7 +36,7 @@ class ViewerController < ApplicationController
   end
 
   def forside
-    if Parameter.find_by_name('Adgang').value == "Åben"
+    if site_is_open
       
        @page = Page.find_by_name('Forside')
 
@@ -57,13 +57,17 @@ class ViewerController < ApplicationController
 
     else
       
-      #Skal lede videre til en side der viser at der foretage ændringer.
+      render :action => 'site_closed' 
+      # Den finder layoutet site_closed.html.erb selvom den pågældende action ikke findes
 
     end
 
   end
-
-
+  
+  def closed
+    
+  end
+  
   # def blog
   #   
   #   if logged_in? or Parameter.find_by_name('Adgang').value == "Åben"

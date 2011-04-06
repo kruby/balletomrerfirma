@@ -12,6 +12,15 @@ class ApplicationController < ActionController::Base
   
   before_filter :get_content_for_menu
   
+  def site_is_open
+    if logged_in? or Parameter.find_by_name('Adgang').value == "Åben"
+     return true
+    else
+      false
+    end
+  end
+  
+  
   def get_content_for_menu
     #Menupunkter i forhold til user.category skal hentes. Er man editor, får man kun aktuelle menupunkter at se.
     #get_subdomain_pages

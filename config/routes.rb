@@ -54,10 +54,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts
   
   map.resources :lists
-
-  map.fotos '/brugere', :controller => "users", :name => 'brugere', :action => 'index'
+  
+  map.brugere '/brugere', :controller => "users", :name => 'brugere', :action => 'index'
   map.fotos '/fotos', :controller => "assets", :name => 'fotos', :action => 'index'
-  map.fotos '/sider', :controller => "pages", :name => 'sider', :action => 'index'
+  map.sider '/sider', :controller => "pages", :name => 'sider', :action => 'index'
   map.projekter '/projekter', :controller => "projects", :name => 'projekter', :action => 'projekter'
   map.upload_dir '/publicimages', :controller => 'uploads', :action => 'publicimages'
   map.blog '/blog', :controller => "viewer", :name => 'blog', :action => 'blog'
@@ -126,9 +126,7 @@ ActionController::Routing::Routes.draw do |map|
   #map.root :controller => "pages", :id => 15
   # See how all your routes lay out with "rake routes"
   map.om '', :controller => 'viewer', :name => 'Om os', :action => 'show'
-  map.kontakt '', :controller => 'viewer', :name => 'Kontakt', :action => 'show'
-  #map.projekter '', :controller => 'viewer', :name => 'Projekter', :action => 'projekter'
-  
+  map.kontakt '', :controller => 'viewer', :name => 'Kontakt', :action => 'show'  
 
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'

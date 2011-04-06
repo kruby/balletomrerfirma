@@ -16,13 +16,21 @@ class ProjectsController < ApplicationController
   def projekter
     #@projects = Project.active_projects
     
-    @search = Project.active_projects(params[:search])
-    @projects = @search.all.paginate :page => params[:page], :per_page => 10
+    if logged_in? or site_is_open
     
-    @stylesheet = 'kruby_projectslist'
+      @search = Project.active_projects(params[:search])
+      @projects = @search.all.paginate :page => params[:page], :per_page => 10
+    
+      @stylesheet = 'kruby_projectslist'
 
-    session[:menu_id] = Page.find_by_name('Projekter').id
-    render :layout => 'viewer'
+      session[:menu_id] = Page.find_by_name('Projekter').id
+      render :layout => 'viewer'
+
+    else
+      
+      redirect_to root_url
+      
+    end
     
   end
 

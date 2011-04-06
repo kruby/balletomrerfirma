@@ -6,6 +6,7 @@
     float: left;
     margin-left: 10px;
     margin-top: 4px;
+	width: 110px;
 }
 
 .status_info, .status_info a {
@@ -786,7 +787,6 @@ login1 > a {
 	text-align:left;
 	color:#FFF;
 	width:300px;
-	margin-left: 50px;
 }
 
 .time_stamp {
