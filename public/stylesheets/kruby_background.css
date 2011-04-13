@@ -5,8 +5,9 @@ html, body, #bg, #bg table, #bg td {
 }
 
 body {
-	background-color: #9EC8A2;
+	background-color: #FFF;
 	background-image: url(images/baggrund.jpg);
+	background-repeat: repeat-x;
 }
 
 #bg {
@@ -32,6 +33,3 @@ body {
     min-height:50%;
     min-width:50%;
 }
-
-
-#54735A
