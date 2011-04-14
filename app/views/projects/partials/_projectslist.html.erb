@@ -22,16 +22,16 @@
 
 	<div id="project_assets">
 
-		<% for attachment in project.attachments %>
-		<% @image = Asset.find(attachment.asset_id).photo.url(:image_100) %>
-		<% @image_show = Asset.find(attachment.asset_id).photo.url(:original)%> 
-		<% @alt = attachment.description rescue nil %>
-		<div id="clip_outer">
-			<div id="clip_inner">
-				<span class='thumb' id='project_images_<%=project.id%>'><%= link_to image_tag(@image, :alt => @alt), @image_show %></span>
-				<!-- HER HAR VI BRUGT POST.ID TIL AT GØRE GRUPPEN AF FOTOS UNIK, SOM DET OGSÅ SES NEDERST I JAVASCRIPT I GROUP -->
+		<% for attachment in project.attachments.find(:all, :order => 'position') %>
+			<% @image = Asset.find(attachment.asset_id).photo.url(:image_100) %>
+			<% @image_show = Asset.find(attachment.asset_id).photo.url(:original)%> 
+			<% @alt = attachment.description rescue nil %>
+			<div id="clip_outer">
+				<div id="clip_inner">
+					<span class='thumb' id='project_images_<%=project.id%>'><%= link_to image_tag(@image, :alt => @alt), @image_show %></span>
+					<!-- HER HAR VI BRUGT POST.ID TIL AT GØRE GRUPPEN AF FOTOS UNIK, SOM DET OGSÅ SES NEDERST I JAVASCRIPT I GROUP -->
+				</div>
 			</div>
-		</div>
 
 		<% end %>
 

@@ -18,7 +18,8 @@
 
 <table>
   <tr>
-    <th class="pos">ID</th>
+    <th class='sort_after_text'><%= order @search, :by => :position, :as => 'Pos.' %></th>
+	<th class="pos">ID</th>
 	<th>Photo</th>
 	<th class='sort_after_text'><%= order @search, :by => :asset_id, :as => 'Foto' %></th>
     <th class='sort_after_text'><%= order @search, :by => :description, :as => 'Foto beskriv.' %></th>
@@ -33,6 +34,7 @@
 <% @image_show = Asset.find(attachment.asset_id).photo.url(:image_200) rescue nil %>
 
   <tr>
+	<td class="pos"><%=h attachment.position %></td>
 	<td class="pos"><%=h attachment.id %></td>
 	<td class='thumb' id='images'><%= link_to image_tag(@image), @image_show rescue nil %></td>
 	<td class="pos"><%=h attachment.asset_id %></td>
