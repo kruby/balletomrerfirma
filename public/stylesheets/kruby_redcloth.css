@@ -139,7 +139,6 @@
 }
 
 /* IMAGE STYRING */
-
 #redcloth p.image_right { float: right; clear: right; margin: 0px; }
 
 #redcloth p.image_left { float: left; clear: left; margin: 0px; }
@@ -148,6 +147,8 @@
 #redcloth p.bottom { bottom: 0px; }
 #redcloth p.right { right: 0px; }
 #redcloth p.center { margin-right: auto; margin-left: auto;}
+
+#redcloth p.image_full img { width: 531px; }
 
 #redcloth p.width95 img { width: 95%;}
 #redcloth p.width90 img { width: 90%;}
@@ -206,7 +207,7 @@
 #redcloth p.right30 { margin-right: 30px;}
 #redcloth p.right40 { margin-right: 40px;}
 #redcloth p.right50 { margin-right: 50px;}
-#redcloth p .right60 { margin-right: 60px;}
+#redcloth p.right60 { margin-right: 60px;}
 #redcloth p.right70 { margin-right: 70px;}
 #redcloth p.right80 { margin-right: 80px;}
 #redcloth p.right90 { margin-right: 90px;}
