@@ -87,13 +87,6 @@ Rails::Initializer.run do |config|
 
 end
 
-# gem 'mislav-will_paginate', '~> 2.2'
-#   require 'will_paginate'
-# gem 'has_finder'
-#   require 'has_finder'
-#   
-  # gem 'RedCloth'
-  #      require 'RedCloth'
   
   WillPaginate::ViewHelpers.pagination_options[:previous_label] = '<<'
   WillPaginate::ViewHelpers.pagination_options[:next_label] = '>>'

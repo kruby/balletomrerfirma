@@ -19,7 +19,7 @@ common: &default_settings
   # Agent Enabled (Rails Only)
   # Use this setting to force the agent to run or not run.
   # Default is 'auto' which means the agent will install and run only
-  # if a valid dispatcher such as Mongrel is running.  This prprojects
+  # if a valid dispatcher such as Mongrel is running.  This prevents
   # it from running with Rake or the console.  Set to false to
   # completely turn the agent off regardless of the other settings.
   # Valid values are true, false and auto.
@@ -33,7 +33,7 @@ common: &default_settings
   # "All UI" then specify a semicolon separated list of up to three
   # distinct names.  If you comment this out, it defaults to the 
   # capitalized RAILS_ENV (i.e., Production, Staging, etc)
-  app_name: bltf.dk
+  app_name: kruby.dk
 
   # When "true", the agent collects performance data about your 
   # application and reports this data to the NewRelic RPM service at 
