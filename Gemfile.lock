@@ -1,0 +1,54 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.9)
+    actionmailer (2.3.14)
+      actionpack (= 2.3.14)
+    actionpack (2.3.14)
+      activesupport (= 2.3.14)
+      rack (~> 1.1.0)
+    activerecord (2.3.14)
+      activesupport (= 2.3.14)
+    activeresource (2.3.14)
+      activesupport (= 2.3.14)
+    activesupport (2.3.14)
+    cocaine (0.3.2)
+    json (1.8.1)
+    mime-types (1.23)
+    mysql (2.9.1)
+    newrelic_rpm (3.6.9.171)
+    paperclip (2.7.5)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (~> 0.3.0)
+      mime-types
+    rack (1.1.6)
+    rails (2.3.14)
+      actionmailer (= 2.3.14)
+      actionpack (= 2.3.14)
+      activerecord (= 2.3.14)
+      activeresource (= 2.3.14)
+      activesupport (= 2.3.14)
+      rake (>= 0.8.3)
+    rake (0.9.2)
+    rdoc (4.0.1)
+      json (~> 1.4)
+    searchlogic (2.5.15)
+      activerecord (~> 2.3.12)
+      activesupport (~> 2.3.12)
+    will_paginate (2.3.16)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth
+  mime-types (= 1.23)
+  mysql
+  newrelic_rpm
+  paperclip (~> 2.7.4)
+  rails (= 2.3.14)
+  rake (= 0.9.2)
+  rdoc
+  searchlogic
+  will_paginate (~> 2.3.15)
