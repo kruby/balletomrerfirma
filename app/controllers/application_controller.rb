@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 	
   before_filter :set_user_language
-  before_filter :prepare_for_mobile
+  # before_filter :prepare_for_mobile
 	
   
   # See ActionController::RequestForgeryProtection for details vi ændrer lidt
@@ -125,19 +125,20 @@ class ApplicationController < ActionController::Base
     I18n.locale = 'da'  
   end
   
-  def mobile_device?
-    if session[:mobile_param]
-      session[:mobile_param] == "1"
-    else
-      request.user_agent =~ /Mobile|webOS/
-    end
-  end
-  helper_method :mobile_device?
-
-  def prepare_for_mobile
-    session[:mobile_param] = params[:mobile] if params[:mobile]
-    request.format = :mobile if mobile_device?    
-  end
+  # def mobile_device?
+  #   if session[:mobile_param]
+  #     session[:mobile_param] == "1"
+  #   else
+  #     request.user_agent =~ /Mobile|webOS/
+  #   end
+  # end
+  # 	
+  # helper_method :mobile_device?
+  # 
+  # def prepare_for_mobile
+  #   session[:mobile_param] = params[:mobile] if params[:mobile]
+  #   request.format = :mobile if mobile_device?    
+  # end
 	
 
 end
