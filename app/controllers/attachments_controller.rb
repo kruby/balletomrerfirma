@@ -143,8 +143,8 @@ class AttachmentsController < ApplicationController
     @attachment.destroy
     
     #redirect_to :action => 'index_normal'
-    if @attachment.attachable_type == 'Product'
-      redirect_to edit_product_path(@attachment.attachable_id)
+    if @attachment.attachable_type == 'Project'
+      redirect_to edit_project_path(@attachment.attachable_id)
     else
       redirect_to edit_post_path(@attachment.attachable_id)
     end
