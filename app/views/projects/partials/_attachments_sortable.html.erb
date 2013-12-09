@@ -13,7 +13,7 @@
 		<% for attachment in @project.attachments.find(:all, :order => 'position') %>
 	
 		<% @image = Asset.find(attachment.asset_id).photo.url(:image_50) rescue nil%>
-		<% @attachment_and_id = attachment.type.to_s + '_' + attachment.id.to_s %>
+		<% @attachment_and_id = attachment.class.to_s + '_' + attachment.id.to_s %>
 	
 		<% content_tag_for(:li, attachment, :class => 'handle') do %>
 				

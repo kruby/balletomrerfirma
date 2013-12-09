@@ -68,7 +68,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        flash[:notice] = 'Begivenheden blev oprettet.'
+        flash[:notice] = 'Projektet blev oprettet.'
         format.html { redirect_to(edit_project_path(@project)) }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
@@ -85,7 +85,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        flash[:notice] = 'Begivenheden blev opdateret.'
+        flash[:notice] = 'Projektet blev opdateret.'
         format.html { redirect_to(edit_project_path) }
         format.xml  { head :ok }
       else

@@ -1,7 +1,7 @@
 <div id="attachments_links">
 	<% @page %>
 	<%= link_to '[Tilbage]', edit_project_path(params[:project_id]) %>
-	<%= link_to '[Opdater]', project_attachments_path(params[:project_id], :page => params[:page]) %><br>
+	<%= link_to '[Opdater]', projects_attachments_paged_path(params[:project_id]) %><br>
 </div>
 
 <%= render :partial => '/attachments/partials/attachments'%>
