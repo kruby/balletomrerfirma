@@ -1,6 +1,6 @@
 class AttachmentsController < ApplicationController
   
-  before_filter :login_required, :except => ['create', 'edit']
+  before_filter :login_required, :except => ['create', 'edit', 'update']
 	before_filter :editor_required
   # Hvert attachment hører til en post, post hører til et team_id (subdomæne).
   # Her bruger jeg :load_team for at få fat i de rigtige assets, og udnytter at de har et team_id.
