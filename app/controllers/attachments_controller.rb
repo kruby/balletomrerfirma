@@ -1,11 +1,13 @@
 class AttachmentsController < ApplicationController
-  # GET /attachments
-  # GET /attachments.xml
   
-  before_filter :login_required, :editor_required
+  before_filter :login_required, :except => ['create', 'edit']
+	before_filter :editor_required
   # Hvert attachment hører til en post, post hører til et team_id (subdomæne).
   # Her bruger jeg :load_team for at få fat i de rigtige assets, og udnytter at de har et team_id.
-  
+
+
+  # GET /attachments
+  # GET /attachments.xml  
   def index
     #raise params.to_yaml
 
@@ -25,7 +27,6 @@ class AttachmentsController < ApplicationController
       @assets = Asset.descend_by_id.all.paginate :page => params[:page], :per_page => 30
 
     end
-
   end
 
   def index_normal
@@ -76,25 +77,14 @@ class AttachmentsController < ApplicationController
     @array = attachment_ids(@attachable)
       
           if @array.include?(params[:id].to_i)
-            if params[:product_id]
-              render product_attachments_path(:product_id => @attachable.id)
-            else
               render post_attachments_path(:post_id => @attachable.id)
-            end
-          
           else
             #raise params.to_yaml
             @attachment = @attachable.attachments.build(:asset_id => @asset_id)
             @attachment.description = Asset.find(@asset_id).description
             @attachment.save!
-            if params[:product_id]
-              redirect_to product_attachments_path(:product_id => @attachable.id)
-            else
-              redirect_to post_attachments_path(:post_id => @attachable.id)
-            end
-            
+            redirect_to post_attachments_path(:post_id => @attachable.id)
           end
-  
   end
 
 
@@ -143,11 +133,7 @@ class AttachmentsController < ApplicationController
     @attachment.destroy
     
     #redirect_to :action => 'index_normal'
-    if @attachment.attachable_type == 'Product'
-      redirect_to edit_product_path(@attachment.attachable_id)
-    else
-      redirect_to edit_post_path(@attachment.attachable_id)
-    end
+    redirect_to edit_post_path(@attachment.attachable_id)
     # respond_to do |format|
     #   format.html { redirect_to(attachments_url) }
     #   format.xml  { head :ok }
