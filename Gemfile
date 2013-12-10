@@ -12,6 +12,8 @@ gem "paperclip", "~> 2.7.4"
 gem "rdoc"
 gem "rake", "0.9.2"
 gem "mime-types", "1.23"
+gem "i18n", "0.4.1"
+gem "rubygems-update", "1.4.2"
 
 
 # bundler requires these gems in all environments

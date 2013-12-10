@@ -55,7 +55,7 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :key => 'krubysession',
-    :secret      => '91f0b56bd7ce225451d290b92e3df757bed98bad7f1c22fec3e91056108b6db73be4725563b754e3d06c8c42fb80b297d3d5672d5aca43728442fd255c7028c5'
+    :secret => '91f0b56bd7ce225451d290b92e3df757bed98bad7f1c22fec3e91056108b6db73be4725563b754e3d06c8c42fb80b297d3d5672d5aca43728442fd255c7028c5'
   }
 
   # Use the database for sessions instead of the cookie-based default,
